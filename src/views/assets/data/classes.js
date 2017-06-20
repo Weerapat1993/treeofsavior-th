@@ -95,5 +95,4 @@ for(let i = 0; i < classNames.length; i++) {
   classes.push(body)
 }
 
-console.log(classes)
 export default classes

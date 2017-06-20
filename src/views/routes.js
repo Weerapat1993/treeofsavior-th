@@ -6,6 +6,7 @@ import {
   About,
   Login,
   Register,
+  Gallery,
 } from './pages'
 
 const Routes = () => (
@@ -13,6 +14,7 @@ const Routes = () => (
     <Layouts>
       <Route exact path="/" component={Home}/>
       <Route path="/about" component={About}/>
+      <Route path="/gallery" component={Gallery}/>
       <Route path="/login" component={Login}/>
       <Route path="/register" component={Register}/>
     </Layouts>
