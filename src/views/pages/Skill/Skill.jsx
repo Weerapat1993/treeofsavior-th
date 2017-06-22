@@ -51,7 +51,7 @@ class Skill extends Component {
   render() {
     const { skills } = this.props
     const data = skills.map((item, i) => (
-      <SkillItem key={i} data={item} />
+      <SkillItem key={i} data={item} open={this.open.bind(this)}  />
     ))
     return (
       <div>
@@ -68,9 +68,7 @@ class Skill extends Component {
           />
         </div>
         <hr/>
-        <ul>
-          {data}
-        </ul>
+        {data}
       </div>  
     )
   }
