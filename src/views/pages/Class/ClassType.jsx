@@ -29,23 +29,25 @@ export const ClassType = ({ classes, classType }) => {
         { 
           classesFilter.map((item, i) => (
             <div className={i ? 'col-xs-6' : 'col-xs-12'} key={i}>
-              <p>
+              <div>
                 <Link to={`/classes/show/${item.id}`}>
                   <img src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(item.name)}.png`} alt=""/>
                 </Link>
                 <br/>
                 <a className={`btn ${colorBtn(item.rank)} btn-xs`}>Rank {item.rank}</a> 
-              </p>
-              <p>
+              </div>
+              <br/>
+              <div>
                 <Link to={`/classes/show/${item.id}`}>
                   {item.name}
                 </Link>
-              </p>
-              <p>
+              </div>
+              <br/>
+              <div>
                 <Link to={`/classes/show/${item.id}`}>
                   <img src={classImage(item.character_image)} style={{ height: 180 }} alt='' />
                 </Link>
-              </p>
+              </div>
             </div>
           ))
         }
