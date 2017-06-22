@@ -2,6 +2,7 @@ import React from 'react'
 import Case from 'case'
 import { Link } from 'react-router-dom'
 
+import { Breadcrumbs } from '../../components'
 import classes from '../../assets/data/classes'
 import { collection } from '../../../utils'
 
@@ -26,33 +27,41 @@ const classImage = (name) => {
 export const ClassInfo = (props) => {
   const id = +props.match.params.id
   const data = collection(classes).where('id','=', id).firstOrFail()
-  console.log(data)
+  const path = [
+    {
+      url: '/classes',
+      name: 'Classes'
+    }
+  ]
   return (
-    <div className='panel panel-default'>
-      <div className="panel-body">
-        <div className='row'>
-          <div className="col-sm-2 text-center">
-            <div>
-              <Link to={`/classes/show/${data.id}`}>
-                <img src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(data.name)}.png`} alt=""/>
-              </Link>
+    <div>
+      <Breadcrumbs path={path} title={data.name} />
+      <div className='panel panel-default'>
+        <div className="panel-body">
+          <div className='row'>
+            <div className="col-sm-2 text-center">
+              <div>
+                <Link to={`/classes/show/${data.id}`}>
+                  <img src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(data.name)}.png`} alt=""/>
+                </Link>
+                <br/>
+                <a className={`btn ${colorBtn(data.rank)} btn-xs`}>Rank {data.rank}</a> 
+              </div>
               <br/>
-              <a className={`btn ${colorBtn(data.rank)} btn-xs`}>Rank {data.rank}</a> 
+              <div>
+                <b>{data.name}</b>
+              </div>
             </div>
-            <br/>
-            <div>
-              <b>{data.name}</b>
+            <div className="col-sm-8">
+              Test
             </div>
-          </div>
-          <div className="col-sm-8">
-            Test
-          </div>
-          <div className="col-sm-2 text-center">
-            <Link to={`/classes/show/${data.id}`}>
-              <img src={classImage(data.character_image)} style={{ height: 180 }} alt='' />
-            </Link>
-          </div>
-        </div>  
+            <div className="col-sm-2 text-center">
+              <Link to={`/classes/show/${data.id}`}>
+                <img src={classImage(data.character_image)} style={{ height: 180 }} alt='' />
+              </Link>
+            </div>
+          </div>  
+        </div>
       </div>
     </div>
   )

@@ -1,9 +1,10 @@
 import React from 'react'
-import MenuHeader from '../../components/Layouts/MenuHeader'
+import { Breadcrumbs, MenuHeader } from '../../components'
 
 export const Attribute = (props) => {
   return(
     <div>
+      <Breadcrumbs title='Attributes' />
       <MenuHeader title='Attributes' />
     </div>  
   )

@@ -1,5 +1,5 @@
-import { API } from '../constants'
-import { fetchActions, payloadActions } from '../../utils'
+// import { API } from '../constants'
+import { payloadActions } from '../../utils'
 import { GALLERY } from './galleryActionTypes'
 
 // FETCH_GALLERY

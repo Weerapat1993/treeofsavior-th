@@ -20,9 +20,6 @@ export const Navbars = (props) => {
           <LinkContainer to="/about">
             <NavItem>About</NavItem>
           </LinkContainer>
-          <LinkContainer to="/gallery">
-            <NavItem>Gallery</NavItem>
-          </LinkContainer>
           <NavDropdown title="Database" id="basic-nav-dropdown">
             <LinkContainer to="/classes">
               <MenuItem>Classes</MenuItem>
@@ -34,6 +31,9 @@ export const Navbars = (props) => {
               <MenuItem>Attribute</MenuItem>
             </LinkContainer>
           </NavDropdown>
+          <LinkContainer to="/gallery">
+            <NavItem>Gallery</NavItem>
+          </LinkContainer>
         </Nav>
         <Nav pullRight>
           <LinkContainer to="/login">
