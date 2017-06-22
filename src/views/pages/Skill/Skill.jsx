@@ -51,7 +51,12 @@ class Skill extends Component {
   render() {
     const { skills } = this.props
     const data = skills.map((item, i) => (
-      <SkillItem key={i} data={item} open={this.open.bind(this)}  />
+      <SkillItem 
+        key={i} 
+        data={item} 
+        open={this.open.bind(this)}  
+        deleteSkill={this.deleteSkill.bind(this)} 
+      />
     ))
     return (
       <div>
