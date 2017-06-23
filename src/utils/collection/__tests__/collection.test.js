@@ -1,4 +1,4 @@
-import { collection, Collection } from '../collection'
+import { Collection } from '../collection'
 
 const chatID = 1
 const data = [
