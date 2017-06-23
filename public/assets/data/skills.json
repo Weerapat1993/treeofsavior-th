@@ -1,0 +1,2860 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Thrust",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Bash",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Gung Ho",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Concentrate",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 1
+    },
+    {
+      "id": 5,
+      "name": "Pain Barrier",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 1
+    },
+    {
+      "id": 6,
+      "name": "Restrain",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 1
+    },
+    {
+      "id": 7,
+      "name": "Pommel Beat",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 1
+    },
+    {
+      "id": 8,
+      "name": "Double Slash",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 1
+    },
+    {
+      "id": 9,
+      "name": "Energy Bolt",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 2
+    },
+    {
+      "id": 10,
+      "name": "Lethargy",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 2
+    },
+    {
+      "id": 11,
+      "name": "Sleep",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 2
+    },
+    {
+      "id": 12,
+      "name": "Reflect Shield",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 2
+    },
+    {
+      "id": 13,
+      "name": "Earthquake",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 2
+    },
+    {
+      "id": 14,
+      "name": "Sure Spell",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 2
+    },
+    {
+      "id": 15,
+      "name": "Magic Missile",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 2
+    },
+    {
+      "id": 16,
+      "name": "Quick Cast",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 2
+    },
+    {
+      "id": 17,
+      "name": "Swift step",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 3
+    },
+    {
+      "id": 18,
+      "name": "Multi Shot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 3
+    },
+    {
+      "id": 19,
+      "name": "Fulldraw",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 3
+    },
+    {
+      "id": 20,
+      "name": "Kneeling Shot",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 3
+    },
+    {
+      "id": 21,
+      "name": "Oblique Shot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 3
+    },
+    {
+      "id": 22,
+      "name": "Heavy Shot",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 3
+    },
+    {
+      "id": 23,
+      "name": "Twins Arrow",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 3
+    },
+    {
+      "id": 24,
+      "name": "Heal",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 4
+    },
+    {
+      "id": 25,
+      "name": "Cure",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 4
+    },
+    {
+      "id": 26,
+      "name": "Safety Zone",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 4
+    },
+    {
+      "id": 27,
+      "name": "Deprotected Zone",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 4
+    },
+    {
+      "id": 28,
+      "name": "Divine Might",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 4
+    },
+    {
+      "id": 29,
+      "name": "Fade",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 4
+    },
+    {
+      "id": 30,
+      "name": "Guardian Saint",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 4
+    },
+    {
+      "id": 31,
+      "name": "Electrocute",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 24
+    },
+    {
+      "id": 32,
+      "name": "Stone Curse",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 24
+    },
+    {
+      "id": 33,
+      "name": "Hail",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 24
+    },
+    {
+      "id": 34,
+      "name": "Prominence",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 24
+    },
+    {
+      "id": 35,
+      "name": "Meteor",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 24
+    },
+    {
+      "id": 36,
+      "name": "Freezing Sphere",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 24
+    },
+    {
+      "id": 37,
+      "name": "Rain",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 24
+    },
+    {
+      "id": 38,
+      "name": "Frost Cloud",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 24
+    },
+    {
+      "id": 39,
+      "name": "Jolly Roger",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 30
+    },
+    {
+      "id": 41,
+      "name": "Iron Hook",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 30
+    },
+    {
+      "id": 42,
+      "name": "Ice Bolt",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 8
+    },
+    {
+      "id": 43,
+      "name": "Combusion",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 40
+    },
+    {
+      "id": 44,
+      "name": "Dig",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 40
+    },
+    {
+      "id": 45,
+      "name": "Gem Roasting",
+      "max_level": 15,
+      "circle": 2,
+      "class_id": 40
+    },
+    {
+      "id": 46,
+      "name": "Briquetting",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 40
+    },
+    {
+      "id": 47,
+      "name": "Aspersion",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 11
+    },
+    {
+      "id": 48,
+      "name": "Ice Pike",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 8
+    },
+    {
+      "id": 49,
+      "name": "Tincturing",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 40
+    },
+    {
+      "id": 50,
+      "name": "Umbo Blow",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 6
+    },
+    {
+      "id": 51,
+      "name": "Magnum Opus",
+      "max_level": 5,
+      "circle": 2,
+      "class_id": 40
+    },
+    {
+      "id": 52,
+      "name": "Rim Blow",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 6
+    },
+    {
+      "id": 53,
+      "name": "Item Awakening",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 40
+    },
+    {
+      "id": 54,
+      "name": "Guardian",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 6
+    },
+    {
+      "id": 55,
+      "name": "Fireball",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 7
+    },
+    {
+      "id": 56,
+      "name": "Blessing",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 11
+    },
+    {
+      "id": 57,
+      "name": "Firewall",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 7
+    },
+    {
+      "id": 58,
+      "name": "Quicken",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 32
+    },
+    {
+      "id": 59,
+      "name": "Monstrance",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 11
+    },
+    {
+      "id": 60,
+      "name": "Enchant Fire",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 7
+    },
+    {
+      "id": 61,
+      "name": "Flare",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 7
+    },
+    {
+      "id": 62,
+      "name": "Resurrection",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 11
+    },
+    {
+      "id": 63,
+      "name": "Psychic Pressure",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 15
+    },
+    {
+      "id": 64,
+      "name": "Reincarnate",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 32
+    },
+    {
+      "id": 65,
+      "name": "Flame Ground",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 7
+    },
+    {
+      "id": 66,
+      "name": "Sacrament",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 11
+    },
+    {
+      "id": 67,
+      "name": "Stop",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 32
+    },
+    {
+      "id": 68,
+      "name": "Fire Pillar",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 7
+    },
+    {
+      "id": 69,
+      "name": "Telekinesis",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 15
+    },
+    {
+      "id": 70,
+      "name": "Revive",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 11
+    },
+    {
+      "id": 71,
+      "name": "Swap",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 15
+    },
+    {
+      "id": 72,
+      "name": "Mass Heal",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 11
+    },
+    {
+      "id": 73,
+      "name": "Hell Breath",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 7
+    },
+    {
+      "id": 74,
+      "name": "Teleportation",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 15
+    },
+    {
+      "id": 75,
+      "name": "Stone Skin",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 11
+    },
+    {
+      "id": 76,
+      "name": "Exorcise",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 11
+    },
+    {
+      "id": 77,
+      "name": "Slow",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 32
+    },
+    {
+      "id": 78,
+      "name": "Magnetic Force",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 15
+    },
+    {
+      "id": 79,
+      "name": "Raise",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 15
+    },
+    {
+      "id": 80,
+      "name": "Haste",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 32
+    },
+    {
+      "id": 81,
+      "name": "Gravity Pole",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 15
+    },
+    {
+      "id": 82,
+      "name": "Back Masking",
+      "max_level": 10,
+      "circle": 3,
+      "class_id": 32
+    },
+    {
+      "id": 83,
+      "name": "Arcane Energy",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 44
+    },
+    {
+      "id": 84,
+      "name": "Change",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 44
+    },
+    {
+      "id": 85,
+      "name": "Chortasmata",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 43
+    },
+    {
+      "id": 86,
+      "name": "Carnivory",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 43
+    },
+    {
+      "id": 87,
+      "name": "Sterea Trofh",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 43
+    },
+    {
+      "id": 88,
+      "name": "Ice Wall",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 8
+    },
+    {
+      "id": 89,
+      "name": "Keel Hauling",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 30
+    },
+    {
+      "id": 90,
+      "name": "Unlock Chest",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 30
+    },
+    {
+      "id": 91,
+      "name": "Dust Devil",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 30
+    },
+    {
+      "id": 92,
+      "name": "Unbind",
+      "max_level": 1,
+      "circle": 1,
+      "class_id": 16
+    },
+    {
+      "id": 93,
+      "name": "Physical Link",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 16
+    },
+    {
+      "id": 94,
+      "name": "Joint Penalty",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 16
+    },
+    {
+      "id": 95,
+      "name": "Hangman's Knot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 16
+    },
+    {
+      "id": 96,
+      "name": "Spiritual Chain",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 16
+    },
+    {
+      "id": 97,
+      "name": "Life line",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 16
+    },
+    {
+      "id": 98,
+      "name": "Stabbing",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 13
+    },
+    {
+      "id": 99,
+      "name": "Double Weapon Assault",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 30
+    },
+    {
+      "id": 100,
+      "name": "Hexen Dropper",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 30
+    },
+    {
+      "id": 101,
+      "name": "Swash Buckling",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 6
+    },
+    {
+      "id": 102,
+      "name": "High Guard",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 6
+    },
+    {
+      "id": 103,
+      "name": "1 Inch Punch",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 35
+    },
+    {
+      "id": 104,
+      "name": "Double Punch",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 35
+    },
+    {
+      "id": 105,
+      "name": "Statue of Vakarine",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 20
+    },
+    {
+      "id": 106,
+      "name": "Statue of Goddess Zemyna",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 20
+    },
+    {
+      "id": 107,
+      "name": "Statue of Goddess Laima",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 20
+    },
+    {
+      "id": 108,
+      "name": "Carve",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 20
+    },
+    {
+      "id": 109,
+      "name": "Carve Austras Koks",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 20
+    },
+    {
+      "id": 110,
+      "name": "Carve Owl",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 20
+    },
+    {
+      "id": 111,
+      "name": "Statue of Goddess Ausrine",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 20
+    },
+    {
+      "id": 112,
+      "name": "Aukuras",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 12
+    },
+    {
+      "id": 113,
+      "name": "Zalciai",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 12
+    },
+    {
+      "id": 114,
+      "name": "Daino",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 12
+    },
+    {
+      "id": 115,
+      "name": "Zaibas",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 12
+    },
+    {
+      "id": 116,
+      "name": "Divine Stigma",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 12
+    },
+    {
+      "id": 117,
+      "name": "Melstis",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 12
+    },
+    {
+      "id": 118,
+      "name": "Simony",
+      "max_level": 10,
+      "circle": 1,
+      "class_id": 36
+    },
+    {
+      "id": 119,
+      "name": "Discerning Evil",
+      "max_level": 10,
+      "circle": 1,
+      "class_id": 36
+    },
+    {
+      "id": 120,
+      "name": "Increase Magic DEF",
+      "max_level": 10,
+      "circle": 1,
+      "class_id": 36
+    },
+    {
+      "id": 121,
+      "name": "Indulgentia",
+      "max_level": 10,
+      "circle": 1,
+      "class_id": 36
+    },
+    {
+      "id": 122,
+      "name": "Oblation",
+      "max_level": 5,
+      "circle": 2,
+      "class_id": 36
+    },
+    {
+      "id": 123,
+      "name": "Shield Lob",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 6
+    },
+    {
+      "id": 124,
+      "name": "Butterfly",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 6
+    },
+    {
+      "id": 125,
+      "name": "Umbro Thrust",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 6
+    },
+    {
+      "id": 126,
+      "name": "Spell Shop",
+      "max_level": 5,
+      "circle": 2,
+      "class_id": 36
+    },
+    {
+      "id": 127,
+      "name": "Pierce",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 13
+    },
+    {
+      "id": 128,
+      "name": "Arrest",
+      "max_level": 10,
+      "circle": 1,
+      "class_id": 29
+    },
+    {
+      "id": 129,
+      "name": "Repair",
+      "max_level": 10,
+      "circle": 1,
+      "class_id": 29
+    },
+    {
+      "id": 131,
+      "name": "Armor Maintenance",
+      "max_level": 10,
+      "circle": 1,
+      "class_id": 29
+    },
+    {
+      "id": 132,
+      "name": "Base Camp",
+      "max_level": 5,
+      "circle": 2,
+      "class_id": 29
+    },
+    {
+      "id": 133,
+      "name": "Refreshment Table",
+      "max_level": 5,
+      "circle": 2,
+      "class_id": 29
+    },
+    {
+      "id": 134,
+      "name": "Weapon Maintenance",
+      "max_level": 10,
+      "circle": 1,
+      "class_id": 29
+    },
+    {
+      "id": 135,
+      "name": "Call",
+      "max_level": 1,
+      "circle": 1,
+      "class_id": 41
+    },
+    {
+      "id": 136,
+      "name": "Install Perch",
+      "max_level": 1,
+      "circle": 1,
+      "class_id": 41
+    },
+    {
+      "id": 137,
+      "name": "Circling",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 41
+    },
+    {
+      "id": 138,
+      "name": "Hovering",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 41
+    },
+    {
+      "id": 139,
+      "name": "Ice Blast",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 8
+    },
+    {
+      "id": 140,
+      "name": "Embowel",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 14
+    },
+    {
+      "id": 141,
+      "name": "Hanging Shot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 41
+    },
+    {
+      "id": 142,
+      "name": "Stomping Kick",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 14
+    },
+    {
+      "id": 143,
+      "name": "Punish",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 38
+    },
+    {
+      "id": 144,
+      "name": "Cleave",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 14
+    },
+    {
+      "id": 145,
+      "name": "Deeds of Valor",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 38
+    },
+    {
+      "id": 146,
+      "name": "Mordschlag",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 38
+    },
+    {
+      "id": 147,
+      "name": "Double Pay Earn",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 38
+    },
+    {
+      "id": 148,
+      "name": "Cyclone",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 38
+    },
+    {
+      "id": 149,
+      "name": "Pheasant",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 41
+    },
+    {
+      "id": 150,
+      "name": "Wagon Wheel",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 5
+    },
+    {
+      "id": 151,
+      "name": "Cartar Stroke",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 5
+    },
+    {
+      "id": 152,
+      "name": "Crown",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 5
+    },
+    {
+      "id": 153,
+      "name": "Cross Guard",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 5
+    },
+    {
+      "id": 154,
+      "name": "Finestra",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 13
+    },
+    {
+      "id": 155,
+      "name": "Synchro Thrusting",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 13
+    },
+    {
+      "id": 156,
+      "name": "Long Stride",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 13
+    },
+    {
+      "id": 157,
+      "name": "Spear Lunge",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 13
+    },
+    {
+      "id": 158,
+      "name": "Throwing Spear",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 13
+    },
+    {
+      "id": 159,
+      "name": "Moulinet",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 5
+    },
+    {
+      "id": 160,
+      "name": "Sky Liner",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 5
+    },
+    {
+      "id": 161,
+      "name": "Cross Cut",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 5
+    },
+    {
+      "id": 162,
+      "name": "Skull Swing",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 5
+    },
+    {
+      "id": 163,
+      "name": "Vertical Slash",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 5
+    },
+    {
+      "id": 164,
+      "name": "Helm Chopper",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 14
+    },
+    {
+      "id": 165,
+      "name": "Frenzy",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 14
+    },
+    {
+      "id": 166,
+      "name": "Seism",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 14
+    },
+    {
+      "id": 167,
+      "name": "Warcry",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 14
+    },
+    {
+      "id": 168,
+      "name": "Pouncing",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 14
+    },
+    {
+      "id": 169,
+      "name": "Giant Swing",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 14
+    },
+    {
+      "id": 170,
+      "name": "Deploy Pavise",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 9
+    },
+    {
+      "id": 171,
+      "name": "Rapid Fire",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 9
+    },
+    {
+      "id": 172,
+      "name": "Scatter Caltrops",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 9
+    },
+    {
+      "id": 173,
+      "name": "Stone Picking",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 9
+    },
+    {
+      "id": 174,
+      "name": "Stone shot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 9
+    },
+    {
+      "id": 175,
+      "name": "Impaler",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 21
+    },
+    {
+      "id": 176,
+      "name": "Earth Wave",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 21
+    },
+    {
+      "id": 177,
+      "name": "Steed Charge",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 21
+    },
+    {
+      "id": 178,
+      "name": "Trot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 21
+    },
+    {
+      "id": 179,
+      "name": "Doom Spike",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 21
+    },
+    {
+      "id": 180,
+      "name": "Rush",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 21
+    },
+    {
+      "id": 181,
+      "name": "Attaque Coquile",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 37
+    },
+    {
+      "id": 182,
+      "name": "Esquive Toucher",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 37
+    },
+    {
+      "id": 183,
+      "name": "Flanconnade",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 37
+    },
+    {
+      "id": 184,
+      "name": "Lunge",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 37
+    },
+    {
+      "id": 185,
+      "name": "Sept Etoiles",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 37
+    },
+    {
+      "id": 186,
+      "name": "Attaque Composee",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 37
+    },
+    {
+      "id": 187,
+      "name": "Preparation\t",
+      "max_level": 5,
+      "circle": 2,
+      "class_id": 37
+    },
+    {
+      "id": 188,
+      "name": "Astral Body Explosion",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 27
+    },
+    {
+      "id": 189,
+      "name": "Out of Body",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 27
+    },
+    {
+      "id": 190,
+      "name": "Prakriti",
+      "max_level": 1,
+      "circle": 1,
+      "class_id": 27
+    },
+    {
+      "id": 191,
+      "name": "Vashita Siddhi",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 27
+    },
+    {
+      "id": 192,
+      "name": "Teardown",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 9
+    },
+    {
+      "id": 193,
+      "name": "Running Shot",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 9
+    },
+    {
+      "id": 194,
+      "name": "Shield Charge",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 22
+    },
+    {
+      "id": 195,
+      "name": "Montano",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 22
+    },
+    {
+      "id": 196,
+      "name": "Targe Smash",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 22
+    },
+    {
+      "id": 197,
+      "name": "Stake Stockades",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 18
+    },
+    {
+      "id": 198,
+      "name": "Conceal",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 18
+    },
+    {
+      "id": 199,
+      "name": "Claymore",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 18
+    },
+    {
+      "id": 200,
+      "name": "Punji Stake",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 18
+    },
+    {
+      "id": 201,
+      "name": "Detonate Traps",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 18
+    },
+    {
+      "id": 202,
+      "name": "Broom Trap",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 18
+    },
+    {
+      "id": 203,
+      "name": "Collar Bomb",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 18
+    },
+    {
+      "id": 204,
+      "name": "Spike Shooter",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 18
+    },
+    {
+      "id": 205,
+      "name": "Subzero Shield",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 8
+    },
+    {
+      "id": 206,
+      "name": "Gust",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 8
+    },
+    {
+      "id": 207,
+      "name": "Snow Rolling",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 8
+    },
+    {
+      "id": 208,
+      "name": "Barrage",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 10
+    },
+    {
+      "id": 209,
+      "name": "High Anchoring",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 10
+    },
+    {
+      "id": 210,
+      "name": "Critical Shot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 10
+    },
+    {
+      "id": 211,
+      "name": "Steady Aim",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 10
+    },
+    {
+      "id": 212,
+      "name": "Time Bomb Arrow",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 10
+    },
+    {
+      "id": 213,
+      "name": "Bounce Shot",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 10
+    },
+    {
+      "id": 214,
+      "name": "Spiral Arrow",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 10
+    },
+    {
+      "id": 215,
+      "name": "Detoxify",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 25
+    },
+    {
+      "id": 216,
+      "name": "Needle Blow",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 25
+    },
+    {
+      "id": 217,
+      "name": "Bewitch",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 25
+    },
+    {
+      "id": 218,
+      "name": "Wugong Gu",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 25
+    },
+    {
+      "id": 219,
+      "name": "Zhendu",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 25
+    },
+    {
+      "id": 220,
+      "name": "Throw Gu Pot",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 25
+    },
+    {
+      "id": 221,
+      "name": "Jincan Gu",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 25
+    },
+    {
+      "id": 222,
+      "name": "Dragon Soar",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 45
+    },
+    {
+      "id": 223,
+      "name": "Dragontooth",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 45
+    },
+    {
+      "id": 224,
+      "name": "Gae Bulg",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 45
+    },
+    {
+      "id": 225,
+      "name": "Serpentine",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 45
+    },
+    {
+      "id": 226,
+      "name": "Battle Orders",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 46
+    },
+    {
+      "id": 227,
+      "name": "Build Guild Tower",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 46
+    },
+    {
+      "id": 228,
+      "name": "Reduce Craft Time",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 46
+    },
+    {
+      "id": 229,
+      "name": "Summon Guild Member",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 46
+    },
+    {
+      "id": 230,
+      "name": "Warp To Guild Member",
+      "max_level": 1,
+      "circle": 1,
+      "class_id": 46
+    },
+    {
+      "id": 231,
+      "name": "Dark Theurge",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 47
+    },
+    {
+      "id": 232,
+      "name": "Evil Sacrifice",
+      "max_level": 1,
+      "circle": 1,
+      "class_id": 47
+    },
+    {
+      "id": 233,
+      "name": "Invocation",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 47
+    },
+    {
+      "id": 234,
+      "name": "Mastema",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 47
+    },
+    {
+      "id": 235,
+      "name": "Pole of Agony",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 47
+    },
+    {
+      "id": 236,
+      "name": "Blood Bath",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 48
+    },
+    {
+      "id": 237,
+      "name": "Blood Sucking",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 48
+    },
+    {
+      "id": 238,
+      "name": "Bone Pointing",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 48
+    },
+    {
+      "id": 239,
+      "name": "Kurdaitcha",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 48
+    },
+    {
+      "id": 240,
+      "name": "Ngadhundi",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 48
+    },
+    {
+      "id": 241,
+      "name": "Cannon Blast",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 49
+    },
+    {
+      "id": 242,
+      "name": "Cannon Shot",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 49
+    },
+    {
+      "id": 243,
+      "name": "Shoot Down",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 49
+    },
+    {
+      "id": 244,
+      "name": "Siege Burst",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 49
+    },
+    {
+      "id": 245,
+      "name": "Bayonet Thrust",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 50
+    },
+    {
+      "id": 246,
+      "name": "Butt Stroke",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 50
+    },
+    {
+      "id": 247,
+      "name": "Covering Fire",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 50
+    },
+    {
+      "id": 248,
+      "name": "Head Shot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 50
+    },
+    {
+      "id": 249,
+      "name": "Penetration Shot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 50
+    },
+    {
+      "id": 250,
+      "name": "Snipe",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 50
+    },
+    {
+      "id": 251,
+      "name": "Beak Mask",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 51
+    },
+    {
+      "id": 252,
+      "name": "Bloodletting",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 51
+    },
+    {
+      "id": 253,
+      "name": "Fumigate",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 51
+    },
+    {
+      "id": 254,
+      "name": "Healing Factor",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 51
+    },
+    {
+      "id": 255,
+      "name": "Incineration",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 51
+    },
+    {
+      "id": 256,
+      "name": "Pandemic",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 51
+    },
+    {
+      "id": 257,
+      "name": "Ayin Sof",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 52
+    },
+    {
+      "id": 258,
+      "name": "Gematria",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 52
+    },
+    {
+      "id": 259,
+      "name": "Merkabah",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 52
+    },
+    {
+      "id": 260,
+      "name": "Reduce Level",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 52
+    },
+    {
+      "id": 261,
+      "name": " Revenged Sevenfold",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 52
+    },
+    {
+      "id": 262,
+      "name": "Shield Push",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 22
+    },
+    {
+      "id": 263,
+      "name": "Shield Shoving",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 22
+    },
+    {
+      "id": 264,
+      "name": "Shield Bash",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 22
+    },
+    {
+      "id": 265,
+      "name": "Slithering",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 22
+    },
+    {
+      "id": 266,
+      "name": "Shooting Star",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 22
+    },
+    {
+      "id": 267,
+      "name": "High Kick",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 22
+    },
+    {
+      "id": 268,
+      "name": "Clairvoyance",
+      "max_level": 1,
+      "circle": 1,
+      "class_id": 44
+    },
+    {
+      "id": 269,
+      "name": "Counter Spell",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 44
+    },
+    {
+      "id": 270,
+      "name": "Forecast",
+      "max_level": 1,
+      "circle": 1,
+      "class_id": 44
+    },
+    {
+      "id": 271,
+      "name": "Resetting",
+      "max_level": 1,
+      "circle": 1,
+      "class_id": 44
+    },
+    {
+      "id": 272,
+      "name": "Death Sentence",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 44
+    },
+    {
+      "id": 273,
+      "name": "Prophecy",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 44
+    },
+    {
+      "id": 274,
+      "name": "Transform",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 43
+    },
+    {
+      "id": 275,
+      "name": "Shape Shifting",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 43
+    },
+    {
+      "id": 276,
+      "name": "Telepath",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 43
+    },
+    {
+      "id": 277,
+      "name": "Possession",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 27
+    },
+    {
+      "id": 278,
+      "name": "Transmit Prana",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 27
+    },
+    {
+      "id": 279,
+      "name": "Iron Skin",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 35
+    },
+    {
+      "id": 280,
+      "name": "Palm Strike",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 35
+    },
+    {
+      "id": 281,
+      "name": "Hand Knife",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 35
+    },
+    {
+      "id": 282,
+      "name": "Energy Blast",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 35
+    },
+    {
+      "id": 283,
+      "name": "God Finger Flick",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 35
+    },
+    {
+      "id": 284,
+      "name": "Golden Bell Shield",
+      "max_level": 10,
+      "circle": 3,
+      "class_id": 35
+    },
+    {
+      "id": 285,
+      "name": "Gather Corpse",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 39
+    },
+    {
+      "id": 286,
+      "name": "Create Shoggoth",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 39
+    },
+    {
+      "id": 287,
+      "name": "Flash Cannon",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 39
+    },
+    {
+      "id": 288,
+      "name": "Zornhau",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 38
+    },
+    {
+      "id": 289,
+      "name": "Zucken",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 38
+    },
+    {
+      "id": 290,
+      "name": "Redel",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 38
+    },
+    {
+      "id": 291,
+      "name": "Swell Left Arm",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 23
+    },
+    {
+      "id": 292,
+      "name": "Shrink Body",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 23
+    },
+    {
+      "id": 293,
+      "name": "Swell Body",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 23
+    },
+    {
+      "id": 294,
+      "name": "Transpose",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 23
+    },
+    {
+      "id": 295,
+      "name": "Reversi",
+      "max_level": 1,
+      "circle": 2,
+      "class_id": 23
+    },
+    {
+      "id": 296,
+      "name": "Swell Right Arm",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 23
+    },
+    {
+      "id": 297,
+      "name": "Swell Brain",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 23
+    },
+    {
+      "id": 298,
+      "name": "Langort",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 6
+    },
+    {
+      "id": 299,
+      "name": "Sneak Hit",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 33
+    },
+    {
+      "id": 300,
+      "name": "Feint",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 33
+    },
+    {
+      "id": 301,
+      "name": "Capture",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 33
+    },
+    {
+      "id": 302,
+      "name": "Vendetta",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 33
+    },
+    {
+      "id": 303,
+      "name": "Evasion",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 33
+    },
+    {
+      "id": 304,
+      "name": "Lachrymator",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 33
+    },
+    {
+      "id": 305,
+      "name": "Backstab",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 33
+    },
+    {
+      "id": 306,
+      "name": "Burrow",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 33
+    },
+    {
+      "id": 307,
+      "name": "Broadhead",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 34
+    },
+    {
+      "id": 308,
+      "name": "Bodkin Point",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 34
+    },
+    {
+      "id": 309,
+      "name": "Barbed Arrow",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 34
+    },
+    {
+      "id": 310,
+      "name": "Crossfire",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 34
+    },
+    {
+      "id": 311,
+      "name": "Magic Arrow",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 34
+    },
+    {
+      "id": 312,
+      "name": "Singijeon",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 34
+    },
+    {
+      "id": 313,
+      "name": "Concentrated Fire",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 42
+    },
+    {
+      "id": 314,
+      "name": "Caracole",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 42
+    },
+    {
+      "id": 315,
+      "name": "Limacon",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 42
+    },
+    {
+      "id": 316,
+      "name": "Retreat Shot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 42
+    },
+    {
+      "id": 317,
+      "name": "Camouflage",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 26
+    },
+    {
+      "id": 318,
+      "name": "Flu Flu",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 26
+    },
+    {
+      "id": 319,
+      "name": "Flare Shot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 26
+    },
+    {
+      "id": 320,
+      "name": "Cloaking",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 26
+    },
+    {
+      "id": 321,
+      "name": "Perspective Distortion",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 26
+    },
+    {
+      "id": 322,
+      "name": "Scan",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 26
+    },
+    {
+      "id": 323,
+      "name": "Split Arrow",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 26
+    },
+    {
+      "id": 324,
+      "name": "Summoning",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 31
+    },
+    {
+      "id": 325,
+      "name": "Summon Familiar",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 31
+    },
+    {
+      "id": 326,
+      "name": "Summon Salamion",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 31
+    },
+    {
+      "id": 327,
+      "name": "Summon Servant",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 31
+    },
+    {
+      "id": 328,
+      "name": "Attack Ground",
+      "max_level": 1,
+      "circle": 2,
+      "class_id": 31
+    },
+    {
+      "id": 329,
+      "name": "Riding",
+      "max_level": 1,
+      "circle": 2,
+      "class_id": 31
+    },
+    {
+      "id": 330,
+      "name": "Morph",
+      "max_level": 1,
+      "circle": 2,
+      "class_id": 31
+    },
+    {
+      "id": 331,
+      "name": "Hold",
+      "max_level": 1,
+      "circle": 2,
+      "class_id": 31
+    },
+    {
+      "id": 332,
+      "name": "Evocation",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 31
+    },
+    {
+      "id": 333,
+      "name": "Last Rites",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 55
+    },
+    {
+      "id": 334,
+      "name": "Build Cappella",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 55
+    },
+    {
+      "id": 335,
+      "name": "Magnus Exorcismus",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 55
+    },
+    {
+      "id": 336,
+      "name": "Aspergillum",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 55
+    },
+    {
+      "id": 337,
+      "name": "Rune of Destruction",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 53
+    },
+    {
+      "id": 338,
+      "name": "Rune of Ice",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 53
+    },
+    {
+      "id": 339,
+      "name": "Rune of Giants",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 53
+    },
+    {
+      "id": 340,
+      "name": "Rune of Justice",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 53
+    },
+    {
+      "id": 341,
+      "name": "Rune of Protection",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 53
+    },
+    {
+      "id": 342,
+      "name": "Frost Pillar",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 8
+    },
+    {
+      "id": 343,
+      "name": "Flesh Hoop",
+      "max_level": 10,
+      "circle": 1,
+      "class_id": 39
+    },
+    {
+      "id": 344,
+      "name": "Dirty Pole",
+      "max_level": 10,
+      "circle": 1,
+      "class_id": 39
+    },
+    {
+      "id": 345,
+      "name": "Disinter",
+      "max_level": 1,
+      "circle": 2,
+      "class_id": 39
+    },
+    {
+      "id": 346,
+      "name": "Raise Dead",
+      "max_level": 5,
+      "circle": 2,
+      "class_id": 39
+    },
+    {
+      "id": 347,
+      "name": "Corpse Tower",
+      "max_level": 5,
+      "circle": 2,
+      "class_id": 39
+    },
+    {
+      "id": 348,
+      "name": "Pistol Shot",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 30
+    },
+    {
+      "id": 349,
+      "name": "Desmodus",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 31
+    },
+    {
+      "id": 350,
+      "name": "Kunai",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 54
+    },
+    {
+      "id": 351,
+      "name": "Bunshin no Jutsu",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 54
+    },
+    {
+      "id": 352,
+      "name": "Mokuton no Jutsu",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 54
+    },
+    {
+      "id": 353,
+      "name": "Katon no Jutsu",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 54
+    },
+    {
+      "id": 354,
+      "name": "Mijin no Jutsu",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 54
+    },
+    {
+      "id": 355,
+      "name": "Wild Shot",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 42
+    },
+    {
+      "id": 356,
+      "name": "Hexing",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 19
+    },
+    {
+      "id": 357,
+      "name": "Effigy",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 19
+    },
+    {
+      "id": 358,
+      "name": "Tet Mamak La",
+      "max_level": 1,
+      "circle": 1,
+      "class_id": 19
+    },
+    {
+      "id": 359,
+      "name": "Zombify",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 19
+    },
+    {
+      "id": 360,
+      "name": "Mackangdal",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 19
+    },
+    {
+      "id": 361,
+      "name": "Bwa Kayiman",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 19
+    },
+    {
+      "id": 362,
+      "name": "Samediveve",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 19
+    },
+    {
+      "id": 363,
+      "name": "Ogouveve",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 19
+    },
+    {
+      "id": 364,
+      "name": "Damballa",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 19
+    },
+    {
+      "id": 365,
+      "name": "Spread Shot",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 61
+    },
+    {
+      "id": 366,
+      "name": "Koochaksal",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 61
+    },
+    {
+      "id": 367,
+      "name": "Tripple Arrow",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 61
+    },
+    {
+      "id": 368,
+      "name": "Arrow Sprinkle",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 61
+    },
+    {
+      "id": 369,
+      "name": "Parthian Shaft",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 61
+    },
+    {
+      "id": 370,
+      "name": "Cassis Crista",
+      "max_level": 1,
+      "circle": 1,
+      "class_id": 57
+    },
+    {
+      "id": 371,
+      "name": "Frenzied Slash",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 57
+    },
+    {
+      "id": 372,
+      "name": "Evade Thrust",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 57
+    },
+    {
+      "id": 373,
+      "name": "Headbutt",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 57
+    },
+    {
+      "id": 374,
+      "name": "Scutum Hit",
+      "max_level": 15,
+      "circle": 1,
+      "class_id": 57
+    },
+    {
+      "id": 375,
+      "name": "Sonic Strike",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 41
+    },
+    {
+      "id": 376,
+      "name": "Aiming",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 41
+    },
+    {
+      "id": 377,
+      "name": "First Strike",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 41
+    },
+    {
+      "id": 378,
+      "name": "Evasive Maneuvering",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 42
+    },
+    {
+      "id": 379,
+      "name": "Assault Fire",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 42
+    },
+    {
+      "id": 380,
+      "name": "Zwerchhau",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 38
+    },
+    {
+      "id": 381,
+      "name": "Sturtzhau",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 38
+    },
+    {
+      "id": 382,
+      "name": "Balestra Fente",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 37
+    },
+    {
+      "id": 383,
+      "name": "Attque Au Fer",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 37
+    },
+    {
+      "id": 384,
+      "name": "Epee Garde",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 37
+    },
+    {
+      "id": 385,
+      "name": "Fleche",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 37
+    },
+    {
+      "id": 386,
+      "name": "Decatose",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 36
+    },
+    {
+      "id": 387,
+      "name": "Penalty Reduction",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 29
+    },
+    {
+      "id": 388,
+      "name": "Pass",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 32
+    },
+    {
+      "id": 389,
+      "name": "Alchemistic Missile",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 40
+    },
+    {
+      "id": 390,
+      "name": "Flash Strike",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 39
+    },
+    {
+      "id": 391,
+      "name": "Raise Skull Archer",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 39
+    },
+    {
+      "id": 392,
+      "name": "Dethrone",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 45
+    },
+    {
+      "id": 393,
+      "name": "Volley Fire",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 50
+    },
+    {
+      "id": 394,
+      "name": "Birdfall",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 50
+    },
+    {
+      "id": 395,
+      "name": "Stun Blade",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 46
+    },
+    {
+      "id": 396,
+      "name": "Share Buff",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 46
+    },
+    {
+      "id": 397,
+      "name": "Forge",
+      "max_level": 5,
+      "circle": 2,
+      "class_id": 46
+    },
+    {
+      "id": 398,
+      "name": "Shield Tower",
+      "max_level": 5,
+      "circle": 2,
+      "class_id": 46
+    },
+    {
+      "id": 399,
+      "name": "Lycanthropy",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 43
+    },
+    {
+      "id": 400,
+      "name": "Hengestone",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 43
+    },
+    {
+      "id": 401,
+      "name": "Gender Switch",
+      "max_level": 1,
+      "circle": 3,
+      "class_id": 44
+    },
+    {
+      "id": 402,
+      "name": "Twist of Fate",
+      "max_level": 5,
+      "circle": 3,
+      "class_id": 44
+    },
+    {
+      "id": 403,
+      "name": "Cannonade",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 49
+    },
+    {
+      "id": 404,
+      "name": "Smoke Grenade",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 49
+    },
+    {
+      "id": 405,
+      "name": "Bazooka",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 49
+    },
+    {
+      "id": 406,
+      "name": "Kundela Slash",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 48
+    },
+    {
+      "id": 407,
+      "name": "Levitation",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 48
+    },
+    {
+      "id": 408,
+      "name": "Blood Curse",
+      "max_level": 10,
+      "circle": 2,
+      "class_id": 48
+    },
+    {
+      "id": 409,
+      "name": "Gohei",
+      "max_level": 6,
+      "circle": 1,
+      "class_id": 65
+    },
+    {
+      "id": 410,
+      "name": "Kagura",
+      "max_level": 5,
+      "circle": 1,
+      "class_id": 65
+    }
+  ]
+}

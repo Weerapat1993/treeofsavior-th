@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Case from 'case'
-
+import { Collection } from '../../../utils'
+ 
 
 const colorBtn = (rank) => {
   switch(rank) {
@@ -22,7 +23,10 @@ const classImage = (name) => {
 }  
 
 export const ClassType = ({ classes, classType }) => {
-  const classesFilter = classes.filter((item) => item.class_type === classType)
+
+  const Classes = new Collection(classes, 'id')
+  const classesFilter = Classes.where('class_type','=', classType).get()
+  // const classesFilter = classes.filter((item) => item.class_type === classType)
   return(
     <div className='col-md-3 col-sm-6'>
       <div className="row">

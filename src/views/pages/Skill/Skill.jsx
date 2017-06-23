@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { skillActions } from '../../../core/skill'
+import { skillActions, skillSelector } from '../../../core/skill'
 import SkillModal from './SkillModal'
 import SkillModalEdit from './SkillModalEdit'
 import SkillList from './SkillList'
+import SkillSearch from './SkillSearch'
 import { Breadcrumbs, MenuHeader } from '../../components'
 
 class Skill extends Component {
@@ -16,15 +17,21 @@ class Skill extends Component {
       updateSkill: {},
       loadSkill: {},
       showModal: false,
-      showModalEdit: false
+      showModalEdit: false,
+      keyword: '',
     }
   }
 
-  // componentDidMount() {
-  //   console.clear();
-    
-  //   this.props.skillActions.fetchSkill()
-  // }
+  searchSkill(value) {
+    this.setState({
+      keyword: value
+    })
+    console.log(this.state.keyword)
+  }
+
+  componentDidMount() {
+    this.props.skillActions.fetchSkill()
+  }
 
   createSkill(value, dispatch, props) {
     let data = {
@@ -72,6 +79,7 @@ class Skill extends Component {
 
   render() {
     const { skills } = this.props
+    const skillFilter = skillSelector(skills, this.state.keyword)
     return (
       <div>
         <Breadcrumbs title='Skills' />
@@ -95,8 +103,10 @@ class Skill extends Component {
             showModal={this.state.showModalEdit}
           />
         <hr/>
+        <SkillSearch onKey={this.searchSkill.bind(this)} />
+        <hr/>
         <SkillList 
-          data={skills} 
+          data={skillFilter} 
           edit={this.editOpen.bind(this)}
           deleteSkill={this.deleteSkill.bind(this)} 
         />

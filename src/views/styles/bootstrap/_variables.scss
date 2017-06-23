@@ -1,5 +1,5 @@
 // Body
-$body-bg: #eee;
+$body-bg: #eff3f8;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
@@ -34,3 +34,8 @@ $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
 $panel-default-heading-bg: #fff;
+
+// Border Radius
+$border-radius-base:        4px;
+$border-radius-large:       6px;
+$border-radius-small:       3px;

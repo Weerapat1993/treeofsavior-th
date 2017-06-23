@@ -1,4 +1,4 @@
-import { getSkillFilter } from '../skillSelector'
+import { skillSelector } from '../skillSelector'
 
 const initialState = {
   task: {
@@ -31,7 +31,7 @@ describe('Skill Selector', () => {
           }
         }
       }
-      const recieved = getSkillFilter(initialState, props)
+      const recieved = skillSelector(initialState, props)
       const expected = getFilterData(initialState, props)
 
       expect(recieved).toEqual(expected)
