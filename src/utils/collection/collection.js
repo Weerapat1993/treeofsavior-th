@@ -84,9 +84,7 @@ export class Collection {
     let array
     keyArray.map((key) => {
       array = this.data.filter((item) => item[field] === key)
-      array.map(obj => {
-        collect.push(obj)
-      })
+      return array.map(obj => collect.push(obj))
     })
     this.data = collect
     return this
