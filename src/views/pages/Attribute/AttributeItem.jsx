@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Button } from 'react-bootstrap'
 
-class SkillItem extends Component {
+class AttributeItem extends Component {
   handleClick(id) {
     const check = confirm('Are you sure ?')
     if(check) {
-      this.props.deleteSkill(id)
+      this.props.deleteAttribute(id)
     }
   }
   render() {
@@ -33,4 +33,4 @@ class SkillItem extends Component {
   
 }
 
-export default SkillItem
+export default AttributeItem

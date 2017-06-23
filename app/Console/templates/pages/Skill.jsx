@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { skillActions } from '../../../core/skill'
-import SkillModal from './SkillModal'
-import SkillModalEdit from './SkillModalEdit'
-import SkillList from './SkillList'
+import { ${name}Actions } from '../../../core/${name}'
+import ${name_pascal}Modal from './${name_pascal}Modal'
+import ${name_pascal}ModalEdit from './${name_pascal}ModalEdit'
+import ${name_pascal}List from './${name_pascal}List'
 import { Breadcrumbs, MenuHeader } from '../../components'
 
-class Skill extends Component {
+class ${name_pascal} extends Component {
   constructor() {
     super()
 
     this.state = {
-      createSkill: {},
-      updateSkill: {},
-      loadSkill: {},
+      create${name_pascal}: {},
+      update${name_pascal}: {},
+      load${name_pascal}: {},
       showModal: false,
       showModalEdit: false
     }
@@ -23,27 +23,27 @@ class Skill extends Component {
   // componentDidMount() {
   //   console.clear();
     
-  //   this.props.skillActions.fetchSkill()
+  //   this.props.${name}Actions.fetch${name_pascal}()
   // }
 
-  createSkill(value, dispatch, props) {
+  create${name_pascal}(value, dispatch, props) {
     let data = {
       id: new Date().getTime(),
       name: value.name,
       description: value.description,
     }
-    this.props.skillActions.createSkill(data)
+    this.props.${name}Actions.create${name_pascal}(data)
     this.setState({ showModal: false });
   }
 
-  updateSkill(data) {
+  update${name_pascal}(data) {
     console.log('Update Data', data)
-    this.props.skillActions.updateSkill(data)
+    this.props.${name}Actions.update${name_pascal}(data)
     this.setState({ showModalEdit: false });
   }
 
-  deleteSkill(key) {
-    this.props.skillActions.deleteSkill(key)
+  delete${name_pascal}(key) {
+    this.props.${name}Actions.delete${name_pascal}(key)
   }
 
   close() {
@@ -57,48 +57,48 @@ class Skill extends Component {
   editOpen(data) {
     this.setState({ 
       showModalEdit: true,
-      loadSkill: data,
+      load${name_pascal}: data,
     });
 
-    console.log(this.state.loadSkill)
+    console.log(this.state.load${name_pascal})
   }
 
   editClose() {
     this.setState({ 
       showModalEdit: false,
-      loadSkill: {},
+      load${name_pascal}: {},
     });
   }
 
   render() {
-    const { skills } = this.props
+    const { ${name}s } = this.props
     return (
       <div>
-        <Breadcrumbs title='Skills' />
-        <MenuHeader title='Skills' />
+        <Breadcrumbs title='${name_pascal}s' />
+        <MenuHeader title='${name_pascal}s' />
 
         <div className='text-right'>
-          <SkillModal
-            data={this.state.createSkill}
-            handleSubmit={this.createSkill.bind(this)} 
+          <${name_pascal}Modal
+            data={this.state.create${name_pascal}}
+            handleSubmit={this.create${name_pascal}.bind(this)} 
             open={this.open.bind(this)} 
             close={this.close.bind(this)}
             showModal={this.state.showModal}
           />
         </div>
-          <SkillModalEdit
-            data={this.state.updateSkill}
-            handleSubmit={this.updateSkill.bind(this)} 
-            load={this.state.loadSkill}
+          <${name_pascal}ModalEdit
+            data={this.state.update${name_pascal}}
+            handleSubmit={this.update${name_pascal}.bind(this)} 
+            load={this.state.load${name_pascal}}
             open={this.editOpen.bind(this)} 
             close={this.editClose.bind(this)}
             showModal={this.state.showModalEdit}
           />
         <hr/>
-        <SkillList 
-          data={skills} 
+        <${name_pascal}List 
+          data={${name}s} 
           edit={this.editOpen.bind(this)}
-          deleteSkill={this.deleteSkill.bind(this)} 
+          delete${name_pascal}={this.delete${name_pascal}.bind(this)} 
         />
       </div>  
     )
@@ -110,14 +110,14 @@ class Skill extends Component {
 //-------------------------------------
 
 const mapStateToProps = (state, ownProps) => ({
-  skills: state.skill.data,
+  ${name}s: state.${name}.data,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  skillActions: bindActionCreators(skillActions, dispatch)
+  ${name}Actions: bindActionCreators(${name}Actions, dispatch)
 })
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Skill);
+)(${name_pascal});

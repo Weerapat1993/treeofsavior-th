@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Modal } from 'react-bootstrap'
-import SkillForm from '../../forms/SkillForm'
+import ${name_pascal}Form from '../../forms/${name_pascal}Form'
 
-class SkillModal extends Component {
+class ${name_pascal}Modal extends Component {
   constructor() {
     super() 
 
@@ -16,17 +16,17 @@ class SkillModal extends Component {
     return (
       <div>
         <Button bsStyle='primary' onClick={open} >
-          <i className='fa fa-plus'></i> Create New Skill
+          <i className='fa fa-plus'></i> Create New ${name_pascal}
         </Button>
         <Modal show={showModal} onHide={open}>
           <Modal.Header closeButton>
-            <Modal.Title>Create New Skill</Modal.Title>
+            <Modal.Title>Create New ${name_pascal}</Modal.Title>
           </Modal.Header>
-          <SkillForm onSubmit={handleSubmit} close={close} data={data} />
+          <${name_pascal}Form onSubmit={handleSubmit} close={close} data={data} />
         </Modal>
       </div>
     )
   }
 }
 
-export default SkillModal
+export default ${name_pascal}Modal

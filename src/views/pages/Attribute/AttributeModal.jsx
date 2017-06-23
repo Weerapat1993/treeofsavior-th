@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Modal } from 'react-bootstrap'
-import SkillForm from '../../forms/SkillForm'
+import AttributeForm from '../../forms/AttributeForm'
 
-class SkillModal extends Component {
+class AttributeModal extends Component {
   constructor() {
     super() 
 
@@ -16,17 +16,17 @@ class SkillModal extends Component {
     return (
       <div>
         <Button bsStyle='primary' onClick={open} >
-          <i className='fa fa-plus'></i> Create New Skill
+          <i className='fa fa-plus'></i> Create New Attribute
         </Button>
         <Modal show={showModal} onHide={open}>
           <Modal.Header closeButton>
-            <Modal.Title>Create New Skill</Modal.Title>
+            <Modal.Title>Create New Attribute</Modal.Title>
           </Modal.Header>
-          <SkillForm onSubmit={handleSubmit} close={close} data={data} />
+          <AttributeForm onSubmit={handleSubmit} close={close} data={data} />
         </Modal>
       </div>
     )
   }
 }
 
-export default SkillModal
+export default AttributeModal

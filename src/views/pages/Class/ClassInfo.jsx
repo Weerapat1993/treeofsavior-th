@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { Breadcrumbs } from '../../components'
 import classes from '../../assets/data/classes'
-import { collection } from '../../../utils'
+import { Collection } from '../../../utils'
 
 const colorBtn = (rank) => {
   switch(rank) {
@@ -26,7 +26,8 @@ const classImage = (name) => {
 
 export const ClassInfo = (props) => {
   const id = +props.match.params.id
-  const data = collection(classes).where('id','=', id).firstOrFail()
+  const Classes = new Collection(classes, 'id')
+  const data = Classes.where('id','=', id).firstOrFail()
   const path = [
     {
       url: '/classes',
