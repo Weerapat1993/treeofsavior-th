@@ -1,4 +1,4 @@
-import { collection, randStr } from '../../utils'
+import { Collection, randStr } from '../../utils'
 
 // REDUCER : FETCH_SKILL --------------------------------------------------------
 
@@ -30,7 +30,7 @@ export const reducerCreateSkillRequest = (state, action) => ({
 })
 
 export const reducerCreateSkillSuccess = (state, action) => {
-  const Skill = collection(state.data)
+  const Skill = new Collection(state.data, 'skill_id')
   const newState = Skill.insert({
     skill_id: `skill:${randStr(50)}`,
     ...action.payload

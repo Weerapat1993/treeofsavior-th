@@ -1,98 +1,186 @@
-/**
- * Set Collection for Manage Data
- * @param {array} data 
- */
-export const collection = (data) => {
-  let array
-  return {
-    /**
-     * Set First Data & Primary Key 
-     * @param {string} primaryKey
-     */
-    set: (primaryKey) => {
-      this.primaryKey = primaryKey ? primaryKey : 'id'
-      this.data = data ? data : []
-      return collection(data)
-    },
-    /**
-     * Get Data to Array
-     * @return {array}
-     */
-    get: () => {
-      array = data ? data : []
-      return array
-    },
+// Class Collection
+export class Collection {
+  /**
+   * Build Array Collection
+   * ```javascript
+   * const Collection = new Collection([], 'primaryKey')
+   * ```
+   * @param {[]} data
+   * @param {'String'} primaryKey
+   */
+  constructor(data, primaryKey) {
+    this.primaryKey = primaryKey ? primaryKey : 'id'
+    this.data = data ? data : []
+  }
 
-    /**
-     * Get Data to Object
-     * @return {object} 
-     */
-    firstOrFail: () => {
-      try {
-        array = data
-        return array[0]
-      } catch (error) {
-        return {}
-      }
-    },
+  /**
+   * Get Data to Array
+   * @return {[]} data
+   */
+  get() {
+    return this.data
+  }
 
-    /**
-     * Find Data in Array
-     * @param {string} field
-     * @param {string} condition
-     * @param {string} key
-     * @return {function} collection
-     */
-    where: (field, condition, key) => {
-      switch(condition) {
-        case '!=':
-        case '!==':
-          array = data.filter((item) => key !== item[field])
-          break
-        case '=':
-        case '==':
-        case '===':
-        default:
-          array = data.filter((item) => key === item[field])
-          break
-      }
-      return collection(array)
-    },
+  /**
+   * Get Data to Object
+   * @return {object} 
+   */
+  firstOrFail() {
+    return this.data[0]
+  }
 
-    /**
-     * Find & Update Data in Array
-     * @param {object} update
-     * @return {array} newArray
-     */
-    update: (update) => {
-      const newData = {
-        ...collection(data).firstOrFail(),
-        ...update
-      }
-      let newArray = this.data
-      newArray.forEach((item,i) => {
-        if(newData[this.primaryKey] === item[this.primaryKey]){
-          newArray[i] = newData
-        }
+  /**
+   * Find Data in Array
+   * ```javascript
+   * @condition [ === , !== , < , > , <= , >= ]
+   * Collection.where('id','=','1')
+   * ```
+   * @param {'field'} field
+   * @param {'condtion'} condition
+   * @param {'key'} key
+   * @return {this} collection
+   */
+  where(field, condition, key) {
+    switch(condition) {
+      case '!=':
+      case '!==':
+        this.data = this.data.filter((item) => item[field] !== key)
+        break
+      case '<':
+        this.data = this.data.filter((item) => item[field] < key)
+        break
+      case '>':
+        this.data = this.data.filter((item) => item[field] > key)
+        break
+      case '>=':
+        this.data = this.data.filter((item) => item[field] >= key)
+        break
+      case '<=':
+        this.data = this.data.filter((item) => item[field] <= key)
+        break
+      case '=':
+      case '==':
+      case '===':
+      default:
+        this.data = this.data.filter((item) => key === item[field])
+        break
+    }
+    return this
+  }
+
+  /**
+   * Find Data in Array by []
+   * ```javascript
+   * @condition [ === , !== ]
+   * Collection.whereIn('id',[1,2])
+   * ```
+   * @param {'field'} field
+   * @param {[*]} keyArray
+   * @return {this} collection
+   * 
+   */
+  whereIn(field, keyArray) {
+    let collect = []
+    let array
+    keyArray.map((key) => {
+      array = this.data.filter((item) => item[field] === key)
+      array.map(obj => {
+        collect.push(obj)
       })
-      return newArray
-    },
+    })
+    this.data = collect
+    return this
+  }
 
-    /**
-     * Push Data in Array
-     * @param {object} insert
-     * @return {array} newArray
-     */
-    insert: (insert) => {
-      return [
-        ...data,
-        insert
-      ]
-    },
+  /**
+   * Find & Update Data in Array
+   * ```javascript
+   * Collection.update({
+   *  id: 1,
+   *  name: 'newString'
+   * })
+   * ```
+   * @param {object} update
+   * @return {[]} newArray
+   */
+  update(update) {
+    const data = this.data
+    const PK = this.primaryKey
+    if(this.firstOrFail() === {}) return data
+    const newData = {
+      ...this.firstOrFail(),
+      ...update
+    }
+    let newArray = data
+    newArray.forEach((item,i) => {
+      if(newData[PK] === item[PK]){
+        newArray[i] = newData
+      }
+    })
+    return newArray
+  }
 
-    // find: (key) => {
-    //   array = data.filter((item) => key === item[this.primaryKey])
-    //   return array[0]
-    // }
+  /**
+   * Push Data in Array
+   * ```javascript
+   * Collection.insert({
+   *  id: 1,
+   *  name: 'String'
+   * })
+   * ```
+   * @param {object} insert
+   * @return {[]} newArray
+   */
+  insert(insert) {
+    return [
+      ...this.data,
+      insert
+    ]
+  }
+
+  /**
+   * Order By field in Array
+   * @param {string} field
+   * @param {string} orderBy
+   * @return {array} newArray
+   */
+  orderBy(field, orderBy) {
+    const type = typeof this.data[0][field]
+    if(type === 'number') {
+      // sort by value
+      switch(orderBy) {
+        case 'desc':
+          this.data = this.data.sort((a, b) => b[field] - a[field])
+          break
+        case 'asc': 
+        default:
+          this.data = this.data.sort((a, b) => a[field] - b[field])
+          break
+      }
+    } else if(type === 'string') {
+      // sort by name
+      switch(orderBy) {
+        case 'desc':
+          this.data = this.data.sort((a, b) => {
+            const nameA = a[field].toUpperCase(); // ignore upper and lowercase
+            const nameB = b[field].toUpperCase(); // ignore upper and lowercase
+            if(nameB < nameA) return -1;
+            if(nameB > nameA) return 1;
+            return 0;
+          })
+          break
+        case 'asc': 
+        default:
+          this.data = this.data.sort((a, b) => {
+            const nameA = a[field].toUpperCase(); // ignore upper and lowercase
+            const nameB = b[field].toUpperCase(); // ignore upper and lowercase
+            if(nameA < nameB) return -1;
+            if(nameA > nameB) return 1;
+            return 0;
+          })
+          break
+      }
+    }
+    return this
   }
 }
