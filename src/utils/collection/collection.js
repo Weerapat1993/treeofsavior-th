@@ -140,6 +140,7 @@ export class Collection {
 
   /**
    * Order By field in Array
+   * @property orderBy - ['asc', 'desc']
    * @param {string} field
    * @param {string} orderBy
    * @return {array} newArray
