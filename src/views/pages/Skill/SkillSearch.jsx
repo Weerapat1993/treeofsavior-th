@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { FormControl } from 'react-bootstrap'
+import { InputGroup, FormControl } from 'react-bootstrap'
 
 class SkillSearch extends Component {
 
@@ -9,11 +9,17 @@ class SkillSearch extends Component {
 
   render() {
     return (
-      <FormControl 
-        type='text' 
-        placeholder='Search Skill' 
-        onKeyPress={(e) => this.handleKey(e)}
-      />
+      <InputGroup>
+        <InputGroup.Addon>
+          <i className="fa fa-lg fa-search"></i>
+        </InputGroup.Addon>
+        <FormControl 
+          type='text' 
+          bsSize='large'
+          placeholder='Search Skill' 
+          onKeyUp={(e) => this.handleKey(e)}
+        />
+      </InputGroup>
     )
   }
 }

@@ -8,6 +8,7 @@ export const Class = (props) => {
   return(
     <Switch>
       <Route exact path='/classes' component={ClassList}/>
+      <Route path='/classes/type/:class_type' component={ClassList}/>
       <Route path='/classes/show/:id' component={ClassInfo}/>
     </Switch>
   )

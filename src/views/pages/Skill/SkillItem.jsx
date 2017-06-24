@@ -35,7 +35,7 @@ class SkillItem extends Component {
             </Button>
           </ButtonGroup>
         </div>
-        <table className="table table-bordered">
+        <table className="table">
           <tbody>
             <tr>
               <td width={75} className='text-center'>
@@ -52,14 +52,20 @@ class SkillItem extends Component {
               </td>
               <td>
                 <b>ชื่อสกิล :</b> {data.name} <br/>
+                <b>เลเวลสูงสุด :</b> {data.max_level} <br/>
                 <b>รายละเอียด :</b> {data.description}
               </td>
               <td width={75} className='text-center'>
                 {
                   (Class) &&
-                  <Link to={`/classes/show/${Class.id}`}>
-                    <img onError={noImage} src={`http://treeofsavior-th.com/images/Classes/${Class.img_url}.gif`} style={{ width: 70 }} alt='' />
-                  </Link>
+                  <div>
+                    <Link to={`/classes/show/${Class.id}`}>
+                      <img onError={noImage} src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(Class.name)}.png`} style={{ width: 100 }} alt='' />
+                    </Link>
+                    <div className="bold">
+                      {Class.name}
+                    </div>
+                  </div>
                 }
               </td>
             </tr>

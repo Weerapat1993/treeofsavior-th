@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Case from 'case'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
+import { classActions, getClassInfo, getClassSkill } from '../../../core/class'
+import { skillActions } from '../../../core/skill'
 import { Breadcrumbs } from '../../components'
-import classes from '../../assets/data/classes'
-import { Collection } from '../../../utils'
+import SkillClass from '../Skill/SkillClass'
+import { noImage } from '../../../utils'
 
 const colorBtn = (rank) => {
   switch(rank) {
@@ -20,52 +24,83 @@ const colorBtn = (rank) => {
   }
 }
 
-const classImage = (name) => {
-  return require(`../../assets/images/classes/${name}.gif`)
-}  
-
-export const ClassInfo = (props) => {
-  const id = +props.match.params.id
-  const Classes = new Collection(classes, 'id')
-  const data = Classes.where('id','=', id).firstOrFail()
-  const path = [
-    {
-      url: '/classes',
-      name: 'Classes'
+class ClassInfo extends Component {
+  componentDidMount() {
+    const { classActions, skillActions, Class, skills } = this.props
+    if(Class === undefined) {
+      classActions.fetchClass()
     }
-  ]
-  return (
-    <div>
-      <Breadcrumbs path={path} title={data.name} />
-      <div className='panel panel-default'>
-        <div className="panel-body">
-          <div className='row'>
-            <div className="col-sm-2 text-center">
-              <div>
-                <Link to={`/classes/show/${data.id}`}>
-                  <img src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(data.name)}.png`} alt=""/>
-                </Link>
-                <br/>
-                <a className={`btn ${colorBtn(data.rank)} btn-xs`}>Rank {data.rank}</a> 
+    if(!skills.length) {
+      skillActions.fetchSkill()
+    }
+  }
+
+  render() {
+    const { Class, skills, skillLoading } = this.props
+    const path = [
+      {
+        url: '/classes',
+        name: 'Classes'
+      }
+    ]
+    return (
+      <div>
+        {
+          Class &&
+          <div>
+            <Breadcrumbs path={path} title={Class.name} />
+            <div className='panel panel-default'>
+              <div className="panel-body">
+                <div className='row'>
+                  <div className="col-md-2 col-sm-3 text-center">
+                    <div>
+                      <Link to={`/classes/show/${Class.id}`}>
+                        <img src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(Class.name)}.png`} alt=""/>
+                      </Link>
+                      <br/>
+                      <a className={`btn ${colorBtn(Class.rank)} btn-xs`}>Rank {Class.rank}</a> 
+                    </div>
+                    <br/>
+                    <div>
+                      <b>{Class.name}</b>
+                    </div>
+                  </div>
+                  <div className="col-md-8 col-sm-6">
+                    Test
+                  </div>
+                  <div className="col-md-2 col-sm-3 text-center">
+                    <Link to={`/classes/show/${Class.id}`}>
+                      <img onError={noImage} src={`http://treeofsavior-th.com/images/Classes/${Class.img_url}.gif`} style={{ height: 180 }} alt='' />
+                    </Link>
+                  </div>
+                </div>  
               </div>
-              <br/>
-              <div>
-                <b>{data.name}</b>
-              </div>
             </div>
-            <div className="col-sm-8">
-              Test
-            </div>
-            <div className="col-sm-2 text-center">
-              <Link to={`/classes/show/${data.id}`}>
-                <img src={classImage(data.character_image)} style={{ height: 180 }} alt='' />
-              </Link>
-            </div>
-          </div>  
-        </div>
+            <SkillClass skills={skills} loading={skillLoading} classes={[Class]} />
+          </div>
+        }
       </div>
-    </div>
-  )
+    )
+  }
+ 
 }
 
-export default ClassInfo 
+//=====================================
+//  CONNECT
+//-------------------------------------
+
+const mapStateToProps = (state, ownProps) => ({
+  Class: getClassInfo(state, ownProps),
+  skills: getClassSkill(state, ownProps),
+  skillLoading: state.skill.loading
+})
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  classActions: bindActionCreators(classActions, dispatch),
+  skillActions: bindActionCreators(skillActions, dispatch),
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ClassInfo);

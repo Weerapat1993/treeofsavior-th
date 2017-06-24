@@ -21,14 +21,10 @@ const colorBtn = (rank) => {
   }
 }
 
-export const classImage = (name) => {
-  return require(`../../assets/images/classes/${name}.gif`)
-}
-
-export const ClassType = ({ classes, classType }) => {
+export const ClassType = ({ classes, classType, selector }) => {
   const classesFilter = Classes(classes).where('class_type','=', classType).get()
   return(
-    <div className='col-md-3 col-sm-6'>
+    <div className={(selector) ? 'col-md-6 col-md-offset-3' : 'col-md-3 col-sm-6'}>
       <div className="row">
         { 
           classesFilter.map((item, i) => (

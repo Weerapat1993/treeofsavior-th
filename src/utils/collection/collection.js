@@ -30,6 +30,37 @@ export class Collection {
   }
 
   /**
+   * Select Field Data in Array
+   * ```javascript
+   * Collection.select(['id','name'])
+   * ``` 
+   * @param {[object]} fieldArray
+   * @return {this} collection
+   */
+  select(fileldArray) {
+    let oldArray = this.data
+    let newArray = []
+    let obj = {}
+    oldArray.forEach((data) => {
+      Object.keys(data).forEach((key) => {
+        fileldArray.forEach((field) => {
+          if (key === field) {
+            obj = {
+              ...obj,
+              [field]: data[field]
+            }
+          }
+        })
+      })
+      newArray.push(obj)
+      obj = {}
+    })
+
+    this.data = newArray
+    return this
+  }
+
+  /**
    * Find Data in Array
    * ```javascript
    * @condition [ === , !== , < , > , <= , >= ]
@@ -71,7 +102,6 @@ export class Collection {
   /**
    * Find Data in Array by []
    * ```javascript
-   * @condition [ === , !== ]
    * Collection.whereIn('id',[1,2])
    * ```
    * @param {'field'} field
@@ -82,11 +112,33 @@ export class Collection {
   whereIn(field, keyArray) {
     let collect = []
     let array
-    keyArray.map((key) => {
+    keyArray.forEach((key) => {
       array = this.data.filter((item) => item[field] === key)
-      return array.map(obj => collect.push(obj))
+      array.forEach(obj => {
+        collect.push(obj)
+      })
     })
     this.data = collect
+    return this
+  }
+
+  /**
+   * Find Not Data in Array by []
+   * ```javascript
+   * Collection.whereNotIn('id',[1,2])
+   * ```
+   * @param {'field'} field
+   * @param {[*]} keyArray
+   * @return {this} collection
+   * 
+   */
+  whereNotIn(field, keyArray) {
+    let newArray = this.data
+    const whereIn = this.whereIn(field, keyArray).get()
+    whereIn.forEach((where) => {
+      newArray =newArray.filter((item) => item[field] !== where[field])
+    })
+    this.data = newArray
     return this
   }
 
@@ -105,10 +157,7 @@ export class Collection {
     const data = this.data
     const PK = this.primaryKey
     if(this.firstOrFail() === {}) return data
-    const newData = {
-      ...this.firstOrFail(),
-      ...update
-    }
+    const newData = Object.assign({}, this.firstOrFail(), update)
     let newArray = data
     newArray.forEach((item,i) => {
       if(newData[PK] === item[PK]){
@@ -144,40 +193,43 @@ export class Collection {
    * @return {array} newArray
    */
   orderBy(field, orderBy) {
-    const type = typeof this.data[0][field]
-    if(type === 'number') {
-      // sort by value
-      switch(orderBy) {
-        case 'desc':
-          this.data = this.data.sort((a, b) => b[field] - a[field])
-          break
-        case 'asc': 
-        default:
-          this.data = this.data.sort((a, b) => a[field] - b[field])
-          break
-      }
-    } else if(type === 'string') {
-      // sort by name
-      switch(orderBy) {
-        case 'desc':
-          this.data = this.data.sort((a, b) => {
-            const nameA = a[field].toUpperCase(); // ignore upper and lowercase
-            const nameB = b[field].toUpperCase(); // ignore upper and lowercase
-            if(nameB < nameA) return -1;
-            if(nameB > nameA) return 1;
-            return 0;
-          })
-          break
-        case 'asc': 
-        default:
-          this.data = this.data.sort((a, b) => {
-            const nameA = a[field].toUpperCase(); // ignore upper and lowercase
-            const nameB = b[field].toUpperCase(); // ignore upper and lowercase
-            if(nameA < nameB) return -1;
-            if(nameA > nameB) return 1;
-            return 0;
-          })
-          break
+    const data = this.data
+    if(data) {
+      const type = typeof data
+      if(type === 'number') {
+        // sort by value
+        switch(orderBy) {
+          case 'desc':
+            this.data = this.data.sort((a, b) => b[field] - a[field])
+            break
+          case 'asc': 
+          default:
+            this.data = this.data.sort((a, b) => a[field] - b[field])
+            break
+        }
+      } else if(type === 'string') {
+        // sort by name
+        switch(orderBy) {
+          case 'desc':
+            this.data = this.data.sort((a, b) => {
+              const nameA = a[field].toUpperCase(); // ignore upper and lowercase
+              const nameB = b[field].toUpperCase(); // ignore upper and lowercase
+              if(nameB < nameA) return -1;
+              if(nameB > nameA) return 1;
+              return 0;
+            })
+            break
+          case 'asc': 
+          default:
+            this.data = this.data.sort((a, b) => {
+              const nameA = a[field].toUpperCase(); // ignore upper and lowercase
+              const nameB = b[field].toUpperCase(); // ignore upper and lowercase
+              if(nameA < nameB) return -1;
+              if(nameA > nameB) return 1;
+              return 0;
+            })
+            break
+        }
       }
     }
     return this

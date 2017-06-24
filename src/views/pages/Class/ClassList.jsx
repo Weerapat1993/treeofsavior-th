@@ -1,23 +1,27 @@
 import React, { Component } from 'react'
 import { ButtonGroup, Button } from 'react-bootstrap'
+import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { classActions, getNormalClass } from '../../../core/class'
 import Case from 'case'
 
 import ClassType from './ClassType'
-import { Breadcrumbs, MenuHeader } from '../../components'
+import { Breadcrumbs, MenuHeader, TitleDisplay } from '../../components'
 
 const classTypes = ['Swordsman','Wizard','Archer','Cleric']
 
 export class ClassList extends Component {
 
   componentDidMount() {
-    this.props.classActions.fetchClass()
+    const { classActions, classes } = this.props
+    if(!classes.length) {
+      classActions.fetchClass()
+    }
   }
 
   render() {
-    const { classes } = this.props
+    const { classes, loading } = this.props
     return (
       <div>
         <Breadcrumbs title='Classes' />
@@ -25,21 +29,33 @@ export class ClassList extends Component {
           <MenuHeader title='Classes' />
           <div className="text-center">
             <ButtonGroup>
+              <IndexLinkContainer to={`/classes`}>
+                <Button>All</Button>
+              </IndexLinkContainer>
               { 
                 classTypes.map((item, i) => (
-                  <Button key={i}>{Case.capital(item)}</Button>
+                  <LinkContainer to={`/classes/type/${item}`} key={i}>
+                    <Button>{Case.capital(item)}</Button>
+                  </LinkContainer>
                 ))
               }
             </ButtonGroup>
           </div>
           <br/>
-          <div className="row">
-            { 
-              classTypes.map((item, i) => (
-                <ClassType key={i+1} classes={classes} classType={item} />
-              ))
-            }
-          </div>
+          { 
+            !loading ?
+              <div className="row">
+                { 
+                  (classes.length) ?
+                  classTypes.map((item, i) => (
+                    <ClassType key={i+1} classes={classes} classType={item} selector={this.props.match.params.class_type} />
+                  ))
+                  : <TitleDisplay title='ไม่พบข้อมูลดังกล่าว' />
+                }
+              </div>
+            : <TitleDisplay title='กำลังดาวน์โหลดข้อมูล...' />
+          }
+          <hr/>
         </div>
       </div>
     )
@@ -51,7 +67,8 @@ export class ClassList extends Component {
 //-------------------------------------
 
 const mapStateToProps = (state, ownProps) => ({
-  classes: getNormalClass(state)
+  classes: getNormalClass(state, ownProps),
+  loading: state.class.loading,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

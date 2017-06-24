@@ -5,10 +5,9 @@ import { skillActions, skillSelector } from '../../../core/skill'
 import SkillModal from './SkillModal'
 import SkillModalEdit from './SkillModalEdit'
 import SkillList from './SkillList'
-import SkillSearch from './SkillSearch'
-import { Breadcrumbs, MenuHeader, TitleDisplay } from '../../components'
+import { TitleDisplay } from '../../components'
 
-class Skill extends Component {
+class SkillClass extends Component {
   constructor() {
     super()
 
@@ -18,16 +17,9 @@ class Skill extends Component {
       loadSkill: {},
       showModal: false,
       showModalEdit: false,
-      keyword: '',
     }
   }
 
-  searchSkill(value) {
-    this.setState({
-      keyword: value
-    })
-    console.log(this.state.keyword)
-  }
 
   componentDidMount() {
     const { skillActions, skills } = this.props
@@ -85,9 +77,6 @@ class Skill extends Component {
     const skillFilter = skillSelector(skills, this.state.keyword)
     return (
       <div>
-        <Breadcrumbs title='Skills' />
-        <MenuHeader title='Skills' />
-
         <div className='text-right'>
           <SkillModal
             data={this.state.createSkill}
@@ -97,17 +86,14 @@ class Skill extends Component {
             showModal={this.state.showModal}
           />
         </div>
-          <SkillModalEdit
-            data={this.state.updateSkill}
-            handleSubmit={this.updateSkill.bind(this)} 
-            load={this.state.loadSkill}
-            open={this.editOpen.bind(this)} 
-            close={this.editClose.bind(this)}
-            showModal={this.state.showModalEdit}
-          />
-        <br/>
-        <br/>
-        <SkillSearch onKey={this.searchSkill.bind(this)} />
+        <SkillModalEdit
+          data={this.state.updateSkill}
+          handleSubmit={this.updateSkill.bind(this)} 
+          load={this.state.loadSkill}
+          open={this.editOpen.bind(this)} 
+          close={this.editClose.bind(this)}
+          showModal={this.state.showModalEdit}
+        />
         <br/>
         <br/>
         {
@@ -130,9 +116,7 @@ class Skill extends Component {
 //-------------------------------------
 
 const mapStateToProps = (state, ownProps) => ({
-  skills: state.skill.data,
-  classes: state.class.data,
-  loading: state.skill.loading,
+
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -142,4 +126,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Skill);
+)(SkillClass);

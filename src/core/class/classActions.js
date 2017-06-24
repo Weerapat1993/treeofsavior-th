@@ -1,8 +1,9 @@
 import { payloadActions } from '../../utils'
 import { CLASS } from './classActionTypes'
 
-export const fetchClassRequest = () => ({
-  type: CLASS.FETCH.REQUEST
+export const fetchClassRequest = (payload) => ({
+  type: CLASS.FETCH.REQUEST,
+  payload,
 })
 export const fetchClassSuccess = (payload) => ({
   type: CLASS.FETCH.SUCCESS,
@@ -15,7 +16,7 @@ export const fetchClassFailure = (payload) => ({
 
 export const fetchClass = () => (dispatch, getState) => {
   const url = '/assets/data/classes.json'
-  dispatch(fetchClassRequest())
+  dispatch(fetchClassRequest(true))
   return fetch(url, {
     method: 'GET',
     mode: 'no-cors'

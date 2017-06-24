@@ -8,8 +8,9 @@ import { SKILL } from './skillActionTypes'
 //   API: API.SKILL
 // })
 
-export const fetchSkillRequest = () => ({
-  type: SKILL.FETCH.REQUEST
+export const fetchSkillRequest = (payload) => ({
+  type: SKILL.FETCH.REQUEST,
+  payload
 })
 export const fetchSkillSuccess = (payload) => ({
   type: SKILL.FETCH.SUCCESS,
@@ -22,7 +23,7 @@ export const fetchSkillFailure = (payload) => ({
 
 export const fetchSkill = () => (dispatch, getState) => {
   const url = '/assets/data/skills.json'
-  dispatch(fetchSkillRequest())
+  dispatch(fetchSkillRequest(true))
   return fetch(url, {
     method: 'GET',
     mode: 'no-cors'
