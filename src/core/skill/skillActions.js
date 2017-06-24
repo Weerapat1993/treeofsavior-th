@@ -21,7 +21,7 @@ export const fetchSkillFailure = (payload) => ({
 })
 
 export const fetchSkill = () => (dispatch, getState) => {
-  const url = 'http://localhost:3000/assets/data/skills.json'
+  const url = '/assets/data/skills.json'
   dispatch(fetchSkillRequest())
   return fetch(url, {
     method: 'GET',

@@ -1,0 +1,452 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Swordsman",
+      "rank": 1,
+      "img_url": "swordsman_m01",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 5,
+      "name": "Highlander",
+      "rank": 2,
+      "img_url": "swordsman_m02",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 6,
+      "name": "Peltasta",
+      "rank": 2,
+      "img_url": "swordsman_f03",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 13,
+      "name": "Hoplite",
+      "rank": 3,
+      "img_url": "swordsman_f04",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 14,
+      "name": "Barbarian",
+      "rank": 3,
+      "img_url": "swordsman_m05",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 21,
+      "name": "Cataphract",
+      "rank": 4,
+      "img_url": "swordsman_f07",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 22,
+      "name": "Rodelero",
+      "rank": 4,
+      "img_url": "swordsman_f06",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 29,
+      "name": "Squire",
+      "rank": 5,
+      "img_url": "swordsman_m08",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 30,
+      "name": "Corsair",
+      "rank": 5,
+      "img_url": "swordsman_f09",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 37,
+      "name": "Fencer",
+      "rank": 6,
+      "img_url": "swordsman_f12",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 38,
+      "name": "Doppelsoeldner",
+      "rank": 6,
+      "img_url": "swordsman_f11",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 45,
+      "name": "Dragoon",
+      "rank": 7,
+      "img_url": "class_dragoon_f",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 46,
+      "name": "Templar",
+      "rank": 7,
+      "img_url": "class_templar_m",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 54,
+      "name": "Shinobi",
+      "rank": 7,
+      "img_url": "class_no_image",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 56,
+      "name": "Lancer",
+      "rank": 8,
+      "img_url": "lancer_f",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 57,
+      "name": "Murmillo",
+      "rank": 8,
+      "img_url": "murmillo_m",
+      "class_type": "Swordsman"
+    },
+    {
+      "id": 2,
+      "name": "Wizard",
+      "rank": 1,
+      "img_url": "wizard_f01",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 7,
+      "name": "Pyromancer",
+      "rank": 2,
+      "img_url": "wizard_f02",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 8,
+      "name": "Cryomancer",
+      "rank": 2,
+      "img_url": "wizard_f03",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 15,
+      "name": "Psychokino",
+      "rank": 3,
+      "img_url": "wizard_f04",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 16,
+      "name": "Linker",
+      "rank": 3,
+      "img_url": "wizard_m05",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 23,
+      "name": "Thaumaturge",
+      "rank": 4,
+      "img_url": "wizard_f06",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 24,
+      "name": "Elementalist",
+      "rank": 4,
+      "img_url": "wizard_f07",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 31,
+      "name": "Sorcerer",
+      "rank": 5,
+      "img_url": "wizard_f08",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 32,
+      "name": "Chronomancer",
+      "rank": 5,
+      "img_url": "wizard_f09",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 39,
+      "name": "Necromancer",
+      "rank": 6,
+      "img_url": "wizard_m10",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 40,
+      "name": "Alchemist",
+      "rank": 6,
+      "img_url": "wizard_m11",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 47,
+      "name": "Warlock",
+      "rank": 7,
+      "img_url": "class_warlock_f",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 48,
+      "name": "Featherfoot",
+      "rank": 7,
+      "img_url": "class_featherfoot_f",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 53,
+      "name": "Rune Caster",
+      "rank": 6,
+      "img_url": "class_no_image",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 58,
+      "name": "Sage",
+      "rank": 8,
+      "img_url": "sage_f",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 59,
+      "name": "Enchanter",
+      "rank": 8,
+      "img_url": "enchanter_m",
+      "class_type": "Wizard"
+    },
+    {
+      "id": 3,
+      "name": "Archer",
+      "rank": 1,
+      "img_url": "archer_f01",
+      "class_type": "Archer"
+    },
+    {
+      "id": 9,
+      "name": "Quarrel Shooter",
+      "rank": 2,
+      "img_url": "archer_f03",
+      "class_type": "Archer"
+    },
+    {
+      "id": 10,
+      "name": "Ranger",
+      "rank": 2,
+      "img_url": "archer_m02",
+      "class_type": "Archer"
+    },
+    {
+      "id": 17,
+      "name": "Hunter",
+      "rank": 3,
+      "img_url": "archer_f05",
+      "class_type": "Archer"
+    },
+    {
+      "id": 18,
+      "name": "Sapper",
+      "rank": 3,
+      "img_url": "archer_m04",
+      "class_type": "Archer"
+    },
+    {
+      "id": 25,
+      "name": "Wugushi",
+      "rank": 4,
+      "img_url": "archer_f06",
+      "class_type": "Archer"
+    },
+    {
+      "id": 26,
+      "name": "Scout",
+      "rank": 4,
+      "img_url": "archer_m07",
+      "class_type": "Archer"
+    },
+    {
+      "id": 33,
+      "name": "Rogue",
+      "rank": 5,
+      "img_url": "archer_f08",
+      "class_type": "Archer"
+    },
+    {
+      "id": 34,
+      "name": "Fletcher",
+      "rank": 5,
+      "img_url": "archer_m09",
+      "class_type": "Archer"
+    },
+    {
+      "id": 41,
+      "name": "Falconer",
+      "rank": 6,
+      "img_url": "archer_m10",
+      "class_type": "Archer"
+    },
+    {
+      "id": 42,
+      "name": "Schwarzer Reiter",
+      "rank": 6,
+      "img_url": "archer_f11",
+      "class_type": "Archer"
+    },
+    {
+      "id": 49,
+      "name": "Cannoneer",
+      "rank": 7,
+      "img_url": "cannoneer_f",
+      "class_type": "Archer"
+    },
+    {
+      "id": 50,
+      "name": "Musketeer",
+      "rank": 7,
+      "img_url": "class_musketeer_f",
+      "class_type": "Archer"
+    },
+    {
+      "id": 60,
+      "name": "Hakkapalle",
+      "rank": 8,
+      "img_url": "Hackapell_M",
+      "class_type": "Archer"
+    },
+    {
+      "id": 61,
+      "name": "Mergen",
+      "rank": 8,
+      "img_url": "Mergen_M",
+      "class_type": "Archer"
+    },
+    {
+      "id": 4,
+      "name": "Cleric",
+      "rank": 1,
+      "img_url": "cleric_f01",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 11,
+      "name": "Priest",
+      "rank": 2,
+      "img_url": "cleric_m03",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 12,
+      "name": "Krivis",
+      "rank": 2,
+      "img_url": "cleric_m02",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 19,
+      "name": "Bokor",
+      "rank": 3,
+      "img_url": "cleric_m04",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 20,
+      "name": "Dievdirby",
+      "rank": 3,
+      "img_url": "cleric_f05",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 27,
+      "name": "Sadhu",
+      "rank": 4,
+      "img_url": "cleric_f06",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 28,
+      "name": "Paladin",
+      "rank": 4,
+      "img_url": "cleric_m07",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 35,
+      "name": "Monk",
+      "rank": 5,
+      "img_url": "cleric_f08",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 36,
+      "name": "Pardoner",
+      "rank": 5,
+      "img_url": "cleric_f09",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 43,
+      "name": "Druid",
+      "rank": 6,
+      "img_url": "cleric_f11",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 44,
+      "name": "Oracle",
+      "rank": 6,
+      "img_url": "cleric_f10",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 51,
+      "name": "Plague Doctor",
+      "rank": 7,
+      "img_url": "plague_doctor",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 52,
+      "name": "Kabbalist",
+      "rank": 7,
+      "img_url": "class_kabbalist_m",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 55,
+      "name": "Chaplain",
+      "rank": 5,
+      "img_url": "class_no_image",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 62,
+      "name": "Inquisitor",
+      "rank": 8,
+      "img_url": "Inquisitor_M",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 63,
+      "name": "Taoist",
+      "rank": 8,
+      "img_url": "Taoist_F",
+      "class_type": "Cleric"
+    },
+    {
+      "id": 65,
+      "name": "Miko",
+      "rank": 6,
+      "img_url": "class_no_image",
+      "class_type": "Cleric"
+    }
+  ]
+}

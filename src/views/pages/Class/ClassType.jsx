@@ -1,32 +1,32 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Case from 'case'
-import { Collection } from '../../../utils'
- 
+import { noImage } from '../../../utils'
+import { 
+  Classes 
+} from '../../../core/model'
 
 const colorBtn = (rank) => {
   switch(rank) {
-    case 1: return 'btn-danger'
-    case 2: return 'btn-info'
-    case 3: return 'btn-primary'
-    case 4: return 'btn-warning'
-    case 5: return 'btn-success'
-    case 6: return 'btn-danger'
-    case 7: return 'btn-info'
-    case 8: return 'btn-primary'
-    default: return 'btn-default'
+    case 1: return 'danger'
+    case 2: return 'info'
+    case 3: return 'primary'
+    case 4: return 'warning'
+    case 5: return 'success'
+    case 6: return 'danger'
+    case 7: return 'info'
+    case 8: return 'primary'
+    default: return 'default'
   }
 }
 
-const classImage = (name) => {
+export const classImage = (name) => {
   return require(`../../assets/images/classes/${name}.gif`)
-}  
+}
 
 export const ClassType = ({ classes, classType }) => {
-
-  const Classes = new Collection(classes, 'id')
-  const classesFilter = Classes.where('class_type','=', classType).get()
-  // const classesFilter = classes.filter((item) => item.class_type === classType)
+  const classesFilter = Classes(classes).where('class_type','=', classType).get()
   return(
     <div className='col-md-3 col-sm-6'>
       <div className="row">
@@ -35,10 +35,10 @@ export const ClassType = ({ classes, classType }) => {
             <div className={i ? 'col-xs-6' : 'col-xs-12'} key={i}>
               <div>
                 <Link to={`/classes/show/${item.id}`}>
-                  <img src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(item.name)}.png`} alt=""/>
+                  <img onError={noImage} src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(item.name)}.png`} alt=""/>
                 </Link>
                 <br/>
-                <a className={`btn ${colorBtn(item.rank)} btn-xs`}>Rank {item.rank}</a> 
+                <Button bsStyle={colorBtn(item.rank)} bsSize='xsmall'>Rank {item.rank}</Button>
               </div>
               <br/>
               <div>
@@ -49,7 +49,7 @@ export const ClassType = ({ classes, classType }) => {
               <br/>
               <div>
                 <Link to={`/classes/show/${item.id}`}>
-                  <img src={classImage(item.character_image)} style={{ height: 180 }} alt='' />
+                  <img onError={noImage} src={`http://treeofsavior-th.com/images/Classes/${item.img_url}.gif`} style={{ height: 180 }} alt='' />
                 </Link>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageHeader, ButtonGroup, Button } from 'react-bootstrap'
+import { ButtonGroup, Button } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
 export const MenuHeader = ({ title }) => {
@@ -16,7 +16,7 @@ export const MenuHeader = ({ title }) => {
           <Button>Attributes</Button>
         </LinkContainer>
       </ButtonGroup>
-      <PageHeader>{title}</PageHeader>
+      <h1>{title}</h1>
     </div>
   )
 }

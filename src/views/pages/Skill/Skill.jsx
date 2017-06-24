@@ -78,7 +78,7 @@ class Skill extends Component {
   }
 
   render() {
-    const { skills } = this.props
+    const { skills, classes } = this.props
     const skillFilter = skillSelector(skills, this.state.keyword)
     return (
       <div>
@@ -102,11 +102,14 @@ class Skill extends Component {
             close={this.editClose.bind(this)}
             showModal={this.state.showModalEdit}
           />
-        <hr/>
+        <br/>
+        <br/>
         <SkillSearch onKey={this.searchSkill.bind(this)} />
-        <hr/>
+        <br/>
+        <br/>
         <SkillList 
           data={skillFilter} 
+          classes={classes}
           edit={this.editOpen.bind(this)}
           deleteSkill={this.deleteSkill.bind(this)} 
         />
@@ -121,6 +124,7 @@ class Skill extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
   skills: state.skill.data,
+  classes: state.class.data,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
