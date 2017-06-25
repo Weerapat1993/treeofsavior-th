@@ -13,7 +13,6 @@ export const Loading = ({ isLoading, children }) => (
                 <div className="cssload-internal"><div className="cssload-ballcolor cssload-ball_3"> </div></div>
                 <div className="cssload-internal"><div className="cssload-ballcolor cssload-ball_4"> </div></div>
             </div>
-            0
           </div>
           <TitleDisplay title='กำลังดาวน์โหลดข้อมูล' />
         </div> : children

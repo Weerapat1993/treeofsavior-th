@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Layouts from './components/Layouts'
+import { url } from '../core/constants'
 import {
   Home,
   About,
@@ -16,13 +17,14 @@ const Routes = () => (
   <Router>
     <Layouts className='container'>
       <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
-      <Route path="/gallery" component={Gallery}/>
-      <Route path="/classes" component={Class}/>
-      <Route path="/skills" component={Skill}/>
-      <Route path="/attributes" component={Attribute}/>
-      <Route path="/login" component={Login}/>
-      <Route path="/register" component={Register}/>
+      <Route exact path={url('/')} component={Home}/>
+      <Route path={url('/about')} component={About}/>
+      <Route path={url('/gallery')} component={Gallery}/>
+      <Route path={url('/classes')} component={Class}/>
+      <Route path={url('/skills')} component={Skill}/>
+      <Route path={url('/attributes')} component={Attribute}/>
+      <Route path={url('/login')} component={Login}/>
+      <Route path={url('/register')} component={Register}/>
     </Layouts>
   </Router> 
 )

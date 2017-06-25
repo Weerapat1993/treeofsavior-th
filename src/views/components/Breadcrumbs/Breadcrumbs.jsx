@@ -1,19 +1,19 @@
 import React from 'react'
 import { Breadcrumb } from 'react-bootstrap'
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap'
-
+import { url } from '../../../core/constants'
 
 export const Breadcrumbs = ({ path = [], title }) => {
   return(
     <Breadcrumb>
-      <IndexLinkContainer to='/'>
+      <IndexLinkContainer to={url('/')}>
         <Breadcrumb.Item>
           Home
         </Breadcrumb.Item>
       </IndexLinkContainer>
       {
         path.map((item, i) => (
-          <LinkContainer to={item.url} key={i}>
+          <LinkContainer to={url(item.url)} key={i}>
             <Breadcrumb.Item>
               {item.name}
             </Breadcrumb.Item>

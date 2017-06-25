@@ -1,18 +1,19 @@
 import React from 'react'
 import { ButtonGroup, Button } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
+import { url } from '../../../core/constants'
 
 export const MenuHeader = ({ title }) => {
   return (
     <div className='text-center'>
       <ButtonGroup>
-        <LinkContainer to='/classes'>
+        <LinkContainer to={url('/classes')}>
           <Button>Classes</Button>
         </LinkContainer>
-        <LinkContainer to='/skills'>
+        <LinkContainer to={url('/skills')}>
           <Button>Skills</Button>
         </LinkContainer>
-        <LinkContainer to='/attributes'>
+        <LinkContainer to={url('/attributes')}>
           <Button>Attributes</Button>
         </LinkContainer>
       </ButtonGroup>

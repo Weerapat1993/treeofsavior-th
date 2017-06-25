@@ -4,6 +4,7 @@ import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { classActions, getNormalClass } from '../../../core/class'
+import { url } from '../../../core/constants'
 import Case from 'case'
 
 import ClassType from './ClassType'
@@ -29,12 +30,12 @@ export class ClassList extends Component {
           <MenuHeader title='Classes' />
           <div className="text-center">
             <ButtonGroup>
-              <IndexLinkContainer to={`/classes`}>
+              <IndexLinkContainer to={url(`/classes`)}>
                 <Button>All</Button>
               </IndexLinkContainer>
               { 
                 classTypes.map((item, i) => (
-                  <LinkContainer to={`/classes/type/${item}`} key={i}>
+                  <LinkContainer to={url(`/classes/type/${item}`)} key={i}>
                     <Button>{Case.capital(item)}</Button>
                   </LinkContainer>
                 ))

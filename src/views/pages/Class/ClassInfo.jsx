@@ -54,20 +54,22 @@ class ClassInfo extends Component {
             <Breadcrumbs path={path} title={Class.name} />
             <div>
               <table className='text-center'>
-                <tr>
-                  <td>
-                    <img onError={noImage} src={`http://treeofsavior-th.com/images/Classes/${Class.img_url}.gif`} style={{ height: 180 }} alt='' />
-                  </td>
-                  <td>
-                    <img src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(Class.name)}.png`} alt=""/>
-                    <br/>
-                    <a className={`btn ${colorBtn(Class.rank)} btn-xs`}>Rank {Class.rank}</a> 
-                    <br/>
-                    <div>
-                      <b>{Class.name}</b>
-                    </div>
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img onError={noImage} src={`http://treeofsavior-th.com/images/Classes/${Class.img_url}.gif`} style={{ height: 180 }} alt='' />
+                    </td>
+                    <td>
+                      <img src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(Class.name)}.png`} alt=""/>
+                      <br/>
+                      <a className={`btn ${colorBtn(Class.rank)} btn-xs`}>Rank {Class.rank}</a> 
+                      <br/>
+                      <div>
+                        <b>{Class.name}</b>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <Loading isLoading={skillLoading || attributeLoading}>

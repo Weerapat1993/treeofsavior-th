@@ -3,6 +3,7 @@ import { OverlayTrigger, Popover } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Case from 'case'
 import { noImage } from '../../../utils'
+import { url } from '../../../core/constants'
 
 class AttributeItem extends Component {
   popoverHoverFocus = (data, Class) => (
@@ -10,7 +11,7 @@ class AttributeItem extends Component {
       <b>ชื่อ Attribute :</b> {data.att_name} <br/>
       <b>เลเวลสูงสุด :</b> {data.att_max_lv} <br/>
       <b>รายละเอียด :</b> {data.att_description} <br/>
-      <b>อาชีพ :</b> <Link to={`/classes/show/${Class.id}`}>{Class.name}</Link>
+      <b>อาชีพ :</b> <Link to={url(`/classes/show/${Class.id}`)}>{Class.name}</Link>
     </Popover>
   );
 

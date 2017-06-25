@@ -91,7 +91,7 @@ class SkillList extends Component {
   render() {
     const { data, classes, attributes } = this.props
     return (
-      <div style={{ minHeight: 1000 }}>
+      <div style={{ minHeight: 750 }}>
         <div className='text-right'>
           <SkillModal
             data={this.state.createSkill}

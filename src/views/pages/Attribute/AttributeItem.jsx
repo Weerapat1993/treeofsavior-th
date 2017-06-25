@@ -3,6 +3,7 @@ import { Button, ButtonGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Case from 'case'
 import { noImage } from '../../../utils'
+import { url } from '../../../core/constants'
 
 class AttributeItem extends Component {
   handleClick(id) {
@@ -47,14 +48,14 @@ class AttributeItem extends Component {
                 <b>เลเวลสูงสุด :</b> {data.att_max_lv} <br/>
                 <b>รายละเอียด :</b> {data.att_description} <br/>
                 <span className='visible-xs'>
-                  <b>อาชีพ :</b> <Link to={`/classes/show/${Class.id}`}>{Class.name}</Link>
+                  <b>อาชีพ :</b> <Link to={url(`/classes/show/${Class.id}`)}>{Class.name}</Link>
                 </span>
               </td>
               <td width={75} className='text-center hidden-xs'>
                 {
                   (Class) &&
                   <div>
-                    <Link to={`/classes/show/${Class.id}`}>
+                    <Link to={url(`/classes/show/${Class.id}`)}>
                       <img onError={noImage} src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(Class.name)}.png`} style={{ width: 100 }} alt='' />
                     </Link>
                     <div className="bold">

@@ -3,6 +3,7 @@ import { Button, ButtonGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Case from 'case'
 import { noImage } from '../../../utils'
+import { url } from '../../../core/constants'
 import AttributeItemInSkill from '../Attribute/AttributeItemInSkill'
 
 const circleColor = (circle) => {
@@ -62,7 +63,7 @@ class SkillItem extends Component {
                 <b>เลเวลสูงสุด :</b> {data.max_level} <br/>
                 <b>รายละเอียด :</b> {data.description} <br/>
                 <span className='visible-xs'>
-                  <b>อาชีพ :</b> <Link to={`/classes/show/${Class.id}`}>{Class.name}</Link> <br/>
+                  <b>อาชีพ :</b> <Link to={url(`/classes/show/${Class.id}`)}>{Class.name}</Link> <br/>
                 </span>
                 {
                   attributes.length ?
@@ -88,7 +89,7 @@ class SkillItem extends Component {
                 {
                   (Class) &&
                   <div>
-                    <Link to={`/classes/show/${Class.id}`}>
+                    <Link to={url(`/classes/show/${Class.id}`)}>
                       <img onError={noImage} src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(Class.name)}.png`} style={{ width: 100 }} alt='' />
                     </Link>
                     <div className="bold">

@@ -2,44 +2,45 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap'
+import { url } from '../../../core/constants'
 
 export const Navbars = (props) => {
   return (
     <Navbar inverse collapseOnSelect staticTop>
       <Navbar.Header>
         <Navbar.Brand>
-          <Link to='/'>Treeofsavior-TH</Link>
+          <Link to={url('/')}>Treeofsavior-TH</Link>
         </Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
-          <IndexLinkContainer to="/">
+          <IndexLinkContainer to={url('/')}>
             <NavItem>Home</NavItem>
           </IndexLinkContainer>
-          <LinkContainer to="/about">
+          <LinkContainer to={url('/about')}>
             <NavItem>About</NavItem>
           </LinkContainer>
           <NavDropdown title="Database" id="basic-nav-dropdown">
-            <LinkContainer to="/classes">
+            <LinkContainer to={url('/classes')}>
               <MenuItem>Classes</MenuItem>
             </LinkContainer>
-            <LinkContainer to="/skills">
+            <LinkContainer to={url('/skills')}>
               <MenuItem>Skills</MenuItem>
             </LinkContainer>
-            <LinkContainer to="/attributes">
+            <LinkContainer to={url('/attributes')}>
               <MenuItem>Attribute</MenuItem>
             </LinkContainer>
           </NavDropdown>
-          <LinkContainer to="/gallery">
+          <LinkContainer to={url('/gallery')}>
             <NavItem>Gallery</NavItem>
           </LinkContainer>
         </Nav>
         <Nav pullRight>
-          <LinkContainer to="/login">
+          <LinkContainer to={url('/login')}>
             <NavItem>Login</NavItem>
           </LinkContainer>
-          <LinkContainer to="/register">
+          <LinkContainer to={url('/register')}>
             <NavItem>Register</NavItem>
           </LinkContainer>
         </Nav>

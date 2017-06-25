@@ -1,4 +1,5 @@
-import { Collection, randStr } from '../../utils'
+import { randStr } from '../../utils'
+import { Skill } from '../model'
 
 // REDUCER : FETCH_SKILL --------------------------------------------------------
 
@@ -30,9 +31,8 @@ export const reducerCreateSkillRequest = (state, action) => ({
 })
 
 export const reducerCreateSkillSuccess = (state, action) => {
-  const Skill = new Collection(state.data, 'skill_id')
-  const newState = Skill.insert({
-    skill_id: `skill:${randStr(50)}`,
+  const newState = Skill(state.data).insert({
+    id: `skill:${randStr(50)}`,
     ...action.payload
   })
 
@@ -46,6 +46,32 @@ export const reducerCreateSkillSuccess = (state, action) => {
 
 
 export const reducerCreateSkillFailure = (state, action) => ({
+  ...state,
+  error: action.error,
+  isFetching: false
+})
+
+// REDUCER : UPDATE_SKILL --------------------------------------------------------
+
+export const reducerUpdateSkillRequest = (state, action) => ({
+  ...state,
+  error: false,
+  isFetching: true
+})
+
+export const reducerUpdateSkillSuccess = (state, action) => {
+  console.log(state.data)
+  const newState = Skill(state.data).where('id','=',action.payload.id).update(action.payload)
+  console.log(newState)
+  return {
+    ...state,
+    data: newState,
+    error: false,
+    isFetching: false
+  }
+}
+
+export const reducerUpdateSkillFailure = (state, action) => ({
   ...state,
   error: action.error,
   isFetching: false

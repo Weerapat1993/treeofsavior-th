@@ -7,6 +7,8 @@ import {
   Classes 
 } from '../../../core/model'
 
+import { url } from '../../../core/constants'
+
 const colorBtn = (rank) => {
   switch(rank) {
     case 1: return 'danger'
@@ -30,7 +32,7 @@ export const ClassType = ({ classes, classType, selector }) => {
           classesFilter.map((item, i) => (
             <div className={i ? 'col-xs-6' : 'col-xs-12'} key={i}>
               <div>
-                <Link to={`/classes/show/${item.id}`}>
+                <Link to={url(`/classes/show/${item.id}`)}>
                   <img onError={noImage} src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(item.name)}.png`} alt=""/>
                 </Link>
                 <br/>
@@ -38,13 +40,13 @@ export const ClassType = ({ classes, classType, selector }) => {
               </div>
               <br/>
               <div>
-                <Link to={`/classes/show/${item.id}`}>
+                <Link to={url(`/classes/show/${item.id}`)}>
                   {item.name}
                 </Link>
               </div>
               <br/>
               <div>
-                <Link to={`/classes/show/${item.id}`}>
+                <Link to={url(`/classes/show/${item.id}`)}>
                   <img onError={noImage} src={`http://treeofsavior-th.com/images/Classes/${item.img_url}.gif`} style={{ height: 180 }} alt='' />
                 </Link>
               </div>
