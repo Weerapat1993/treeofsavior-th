@@ -47,8 +47,8 @@ class AttributeForm extends React.Component {
 
     if(props.load) {
       props.change('id', props.load.id )
-      props.change('name', props.load.name )
-      props.change('description', props.load.description )
+      props.change('att_name', props.load.att_name )
+      props.change('att_description', props.load.att_description )
     }
   }
 
@@ -58,8 +58,8 @@ class AttributeForm extends React.Component {
       <form onSubmit={handleSubmit}>
         <Modal.Body>
           <Field name='id' component={renderField} type='hidden' label='Attribute ID' placeholder='Attribute ID' />
-          <Field name='name' component={renderField} type='text' label='Attribute Name' placeholder='Attribute Name' />
-          <Field name='description' component={renderField} type='text' label='Attribute Description' placeholder='Attribute Description' />
+          <Field name='att_name' component={renderField} type='text' label='Attribute Name' placeholder='Attribute Name' />
+          <Field name='att_description' component={renderField} type='text' label='Attribute Description' placeholder='Attribute Description' />
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={close}>Close</Button>
