@@ -24,6 +24,7 @@ class SearchBox extends Component {
         <span className="visible-xs">
           <NavBarSearch placeholder={placeholder} handleKey={this.handleKey.bind(this)}  />
         </span>
+        <span className="hidden-xs">
         <InputGroup>
           <InputGroup.Addon>
             <i className="fa fa-lg fa-search"></i>
@@ -35,6 +36,7 @@ class SearchBox extends Component {
             onKeyUp={(e) => this.handleKey(e)}
           />
         </InputGroup>
+        </span>
       </div>
       
     )

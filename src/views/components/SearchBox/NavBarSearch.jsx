@@ -2,9 +2,18 @@ import React from 'react'
 import { Navbar, FormControl, InputGroup } from 'react-bootstrap'
 import ScrollToTop from 'react-scroll-up'
 
+const styles = {
+  searchMenu: {
+    zIndex: 10000,
+    transitionDuration: '0.2s',
+    transitionTimingFunction: 'linear',
+    transitionDelay: '0s'
+  }
+}
+
 export const NavBarSearch = ({ placeholder, handleKey }) => {
   return (
-    <ScrollToTop topPosition={250} showUnder={180} style={{ zIndex: 10000 }}>
+    <ScrollToTop topPosition={200} showUnder={180} style={styles.searchMenu}>
       <Navbar inverse fixedTop>
         <InputGroup style={{ paddingTop: 7 }}>
           <InputGroup.Addon>
