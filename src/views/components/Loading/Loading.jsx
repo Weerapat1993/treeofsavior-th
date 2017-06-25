@@ -4,7 +4,19 @@ import TitleDisplay from '../TitleDisplay'
 export const Loading = ({ isLoading, children }) => (
   <div>
     {
-      isLoading ? <TitleDisplay title='กำลังดาวน์โหลดข้อมูล...' /> : children
+      isLoading ? 
+        <div className="text-center">
+          <div className="cssload-fond text-center">
+            <div className="cssload-container-general">
+                <div className="cssload-internal"><div className="cssload-ballcolor cssload-ball_1"> </div></div>
+                <div className="cssload-internal"><div className="cssload-ballcolor cssload-ball_2"> </div></div>
+                <div className="cssload-internal"><div className="cssload-ballcolor cssload-ball_3"> </div></div>
+                <div className="cssload-internal"><div className="cssload-ballcolor cssload-ball_4"> </div></div>
+            </div>
+            0
+          </div>
+          <TitleDisplay title='กำลังดาวน์โหลดข้อมูล' />
+        </div> : children
     }
   </div>
 )

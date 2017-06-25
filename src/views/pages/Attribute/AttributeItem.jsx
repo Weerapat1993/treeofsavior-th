@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, ButtonGroup, Table } from 'react-bootstrap'
+import { Button, ButtonGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Case from 'case'
 import { noImage } from '../../../utils'

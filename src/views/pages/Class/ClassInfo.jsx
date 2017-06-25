@@ -53,32 +53,23 @@ class ClassInfo extends Component {
           Class &&
           <div>
             <Breadcrumbs path={path} title={Class.name} />
-            <div className='panel panel-default'>
-              <div className="panel-body">
-                <div className='row'>
-                  <div className="col-md-2 col-sm-3 text-center">
-                    <div>
-                      <Link to={`/classes/show/${Class.id}`}>
-                        <img src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(Class.name)}.png`} alt=""/>
-                      </Link>
-                      <br/>
-                      <a className={`btn ${colorBtn(Class.rank)} btn-xs`}>Rank {Class.rank}</a> 
-                    </div>
+            <div>
+              <table className='text-center'>
+                <tr>
+                  <td>
+                    <img onError={noImage} src={`http://treeofsavior-th.com/images/Classes/${Class.img_url}.gif`} style={{ height: 180 }} alt='' />
+                  </td>
+                  <td>
+                    <img src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(Class.name)}.png`} alt=""/>
+                    <br/>
+                    <a className={`btn ${colorBtn(Class.rank)} btn-xs`}>Rank {Class.rank}</a> 
                     <br/>
                     <div>
                       <b>{Class.name}</b>
                     </div>
-                  </div>
-                  <div className="col-md-8 col-sm-6">
-                    Test
-                  </div>
-                  <div className="col-md-2 col-sm-3 text-center">
-                    <Link to={`/classes/show/${Class.id}`}>
-                      <img onError={noImage} src={`http://treeofsavior-th.com/images/Classes/${Class.img_url}.gif`} style={{ height: 180 }} alt='' />
-                    </Link>
-                  </div>
-                </div>  
-              </div>
+                  </td>
+                </tr>
+              </table>
             </div>
             <Loading isLoading={skillLoading || attributeLoading}>
               <SkillList 

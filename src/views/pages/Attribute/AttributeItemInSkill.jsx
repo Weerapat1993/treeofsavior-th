@@ -18,7 +18,7 @@ class AttributeItem extends Component {
     const { data, Class } = this.props
     return (
       <span>
-        <OverlayTrigger trigger={['hover', 'focus']} placement="top" overlay={this.popoverHoverFocus(data, Class)}>
+        <OverlayTrigger trigger={['hover', 'focus', 'click']} rootClose placement="top" overlay={this.popoverHoverFocus(data, Class)}>
            <img onError={noImage} src={`http://www.treeofsavior-th.com/images/icon-attribute/${data.skill_id}_${Case.snake(data.att_name)}.png`} alt='' width={50} height={50}/>
         </OverlayTrigger>
         &nbsp;

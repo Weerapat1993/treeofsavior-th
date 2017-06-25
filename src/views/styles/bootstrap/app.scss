@@ -1,6 +1,9 @@
 /* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
+/* Loader */
+@import "loader";
+
 /* Variables */
 @import "variables";
 
@@ -14,4 +17,9 @@
 
 .bg-gray {
   background: #ddd;
+}
+
+.scroll-up { 
+  color: rgba(0, 0, 0, 0.15);
+  font-size: 100;
 }
