@@ -3,6 +3,7 @@ import { Button, ButtonGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Case from 'case'
 import { noImage } from '../../../utils'
+import AttributeItemInSkill from '../Attribute/AttributeItemInSkill'
 
 const circleColor = (circle) => {
   switch(circle) {
@@ -22,7 +23,7 @@ class SkillItem extends Component {
   }
   
   render() {
-    const { data, edit, Class } = this.props
+    const { data, attributes, edit, Class, video } = this.props
     return (
       <div>
         <div className='text-right'>
@@ -35,27 +36,55 @@ class SkillItem extends Component {
             </Button>
           </ButtonGroup>
         </div>
-        <table className="table">
+        <table width='100%'>
           <tbody>
             <tr>
-              <td width={75} className='text-center'>
+              <td width={75} className='text-center' style={{ verticalAlign: 'top' }}>
                 <table className='text-center'>
                   <tbody>
                     <tr>
                       <td width={60}>
                         <img onError={noImage} src={`http://www.treeofsavior-th.com/images/icon-skill/${data.class_id}_${Case.snake(data.name)}.png`} alt='' width={60} height={60}/>
                         <Button bsStyle={`${circleColor(data.circle)}`} block bsSize='xsmall'>Circle {data.circle}</Button>
+                        {
+                          (data.url) &&
+                          <Button bsStyle='primary' block bsSize='xsmall' onClick={() => video(data)}>
+                            Video
+                          </Button>
+                        } 
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </td>
-              <td>
+              <td style={{ verticalAlign: 'top' }}>
                 <b>ชื่อสกิล :</b> {data.name} <br/>
                 <b>เลเวลสูงสุด :</b> {data.max_level} <br/>
-                <b>รายละเอียด :</b> {data.description}
+                <b>รายละเอียด :</b> {data.description} <br/>
+                <span className='visible-xs'>
+                  <b>อาชีพ :</b> <Link to={`/classes/show/${Class.id}`}>{Class.name}</Link> <br/>
+                </span>
+                {
+                  attributes.length ?
+                  <div>
+                    <br/>
+                    <b>Skill Attribute</b> <br/>
+                    { 
+                      attributes.map((item, i) => (
+                        <AttributeItemInSkill 
+                          key={i} 
+                          Class={Class}
+                          data={item} 
+                        />
+                      ))
+                    }
+                    <br/>
+                    <br/>
+                  </div>
+                  : <span></span>
+                }
               </td>
-              <td width={75} className='text-center'>
+              <td width={75} className='text-center hidden-xs'>
                 {
                   (Class) &&
                   <div>

@@ -1,6 +1,7 @@
 import { 
   Classes,
   Skill,
+  Attribute,
 } from '../model'
 
 const hiddenClass = ['Shinobi','Rune Caster','Chaplain','Miko']
@@ -30,4 +31,11 @@ export const getClassSkill = (state, props) => {
   const id = +props.match.params.id
   const skills = Skill(data).where('class_id','=', id).get()
   return skills
+}
+
+export const getClassAttribute = (state, props) => {
+  const data = state.attribute.data
+  const id = +props.match.params.id
+  const attributes = Attribute(data).where('class_id','=', id).get()
+  return attributes
 }

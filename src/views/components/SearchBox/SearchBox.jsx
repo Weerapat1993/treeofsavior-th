@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { InputGroup, FormControl } from 'react-bootstrap'
 
-class SkillSearch extends Component {
+class SearchBox extends Component {
 
   handleKey(e) {
     this.props.onKey(e.target.value)
   }
 
   render() {
+    const { placeholder } = this.props
     return (
       <InputGroup>
         <InputGroup.Addon>
@@ -16,7 +17,7 @@ class SkillSearch extends Component {
         <FormControl 
           type='text' 
           bsSize='large'
-          placeholder='Search Skill' 
+          placeholder={placeholder} 
           onKeyUp={(e) => this.handleKey(e)}
         />
       </InputGroup>
@@ -24,4 +25,4 @@ class SkillSearch extends Component {
   }
 }
 
-export default SkillSearch
+export default SearchBox

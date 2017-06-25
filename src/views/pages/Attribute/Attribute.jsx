@@ -1,105 +1,53 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { attributeActions } from '../../../core/attribute'
-import AttributeModal from './AttributeModal'
-import AttributeModalEdit from './AttributeModalEdit'
+
+import { attributeActions, attributeSelector } from '../../../core/attribute'
+import { classActions } from '../../../core/class'
 import AttributeList from './AttributeList'
-import { Breadcrumbs, MenuHeader } from '../../components'
+import { Breadcrumbs, MenuHeader, Loading, SearchBox } from '../../components'
 
 class Attribute extends Component {
   constructor() {
     super()
 
     this.state = {
-      createAttribute: {},
-      updateAttribute: {},
-      loadAttribute: {},
-      showModal: false,
-      showModalEdit: false
+      keyword: '',
     }
   }
 
-  // componentDidMount() {
-  //   console.clear();
-    
-  //   this.props.attributeActions.fetchAttribute()
-  // }
+  searchAttribute(value) {
+    this.setState({
+      keyword: value
+    })
+  }
 
-  createAttribute(value, dispatch, props) {
-    let data = {
-      id: new Date().getTime(),
-      name: value.name,
-      description: value.description,
+  componentDidMount() {
+    const { classActions, attributeActions, classes, attributes } = this.props
+    if(!classes.length) {
+      classActions.fetchClass()
     }
-    this.props.attributeActions.createAttribute(data)
-    this.setState({ showModal: false });
-  }
-
-  updateAttribute(data) {
-    console.log('Update Data', data)
-    this.props.attributeActions.updateAttribute(data)
-    this.setState({ showModalEdit: false });
-  }
-
-  deleteAttribute(key) {
-    this.props.attributeActions.deleteAttribute(key)
-  }
-
-  close() {
-    this.setState({ showModal: false });
-  }
-
-  open() {
-    this.setState({ showModal: true });
-  }
-
-  editOpen(data) {
-    this.setState({ 
-      showModalEdit: true,
-      loadAttribute: data,
-    });
-
-    console.log(this.state.loadAttribute)
-  }
-
-  editClose() {
-    this.setState({ 
-      showModalEdit: false,
-      loadAttribute: {},
-    });
+    if(!attributes.length) {
+      attributeActions.fetchAttribute()
+    }
   }
 
   render() {
-    const { attributes } = this.props
+    const { attributes, classes, loading } = this.props
+    const attributeFilter = attributeSelector(attributes, this.state.keyword)
     return (
       <div>
         <Breadcrumbs title='Attributes' />
         <MenuHeader title='Attributes' />
-
-        <div className='text-right'>
-          <AttributeModal
-            data={this.state.createAttribute}
-            handleSubmit={this.createAttribute.bind(this)} 
-            open={this.open.bind(this)} 
-            close={this.close.bind(this)}
-            showModal={this.state.showModal}
+        <SearchBox placeholder='Search Attribute' onKey={this.searchAttribute.bind(this)} />
+        <br/>
+        <br/>
+        <Loading isLoading={loading}>
+          <AttributeList 
+            data={attributeFilter} 
+            classes={classes}
           />
-        </div>
-          <AttributeModalEdit
-            data={this.state.updateAttribute}
-            handleSubmit={this.updateAttribute.bind(this)} 
-            load={this.state.loadAttribute}
-            open={this.editOpen.bind(this)} 
-            close={this.editClose.bind(this)}
-            showModal={this.state.showModalEdit}
-          />
-        <hr/>
-        <AttributeList 
-          data={attributes} 
-          edit={this.editOpen.bind(this)}
-          deleteAttribute={this.deleteAttribute.bind(this)} 
-        />
+        </Loading>
       </div>  
     )
   }
@@ -111,10 +59,13 @@ class Attribute extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
   attributes: state.attribute.data,
+  classes: state.class.data,
+  loading: state.attribute.loading,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  attributeActions: bindActionCreators(attributeActions, dispatch)
+  attributeActions: bindActionCreators(attributeActions, dispatch),
+  classActions: bindActionCreators(classActions, dispatch),
 })
 
 export default connect(

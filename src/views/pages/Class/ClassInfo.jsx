@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { classActions, getClassInfo, getClassSkill } from '../../../core/class'
+import { classActions, getClassInfo, getClassSkill, getClassAttribute } from '../../../core/class'
 import { skillActions } from '../../../core/skill'
-import { Breadcrumbs } from '../../components'
-import SkillClass from '../Skill/SkillClass'
+import { attributeActions } from '../../../core/attribute'
+import { Breadcrumbs, Loading } from '../../components'
+import SkillList from '../Skill/SkillList'
 import { noImage } from '../../../utils'
 
 const colorBtn = (rank) => {
@@ -26,17 +27,20 @@ const colorBtn = (rank) => {
 
 class ClassInfo extends Component {
   componentDidMount() {
-    const { classActions, skillActions, Class, skills } = this.props
+    const { classActions, skillActions, attributeActions, Class, skills, attributes } = this.props
     if(Class === undefined) {
       classActions.fetchClass()
     }
     if(!skills.length) {
       skillActions.fetchSkill()
     }
+    if(!attributes.length) {
+      attributeActions.fetchAttribute()
+    }
   }
 
   render() {
-    const { Class, skills, skillLoading } = this.props
+    const { Class, skills, attributes, skillLoading, attributeLoading } = this.props
     const path = [
       {
         url: '/classes',
@@ -76,7 +80,13 @@ class ClassInfo extends Component {
                 </div>  
               </div>
             </div>
-            <SkillClass skills={skills} loading={skillLoading} classes={[Class]} />
+            <Loading isLoading={skillLoading || attributeLoading}>
+              <SkillList 
+                data={skills} 
+                classes={[Class]}
+                attributes={attributes}
+              />
+            </Loading>
           </div>
         }
       </div>
@@ -92,12 +102,15 @@ class ClassInfo extends Component {
 const mapStateToProps = (state, ownProps) => ({
   Class: getClassInfo(state, ownProps),
   skills: getClassSkill(state, ownProps),
-  skillLoading: state.skill.loading
+  attributes: getClassAttribute(state, ownProps),
+  skillLoading: state.skill.loading,
+  attributeLoading: state.attribute.loading
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   classActions: bindActionCreators(classActions, dispatch),
   skillActions: bindActionCreators(skillActions, dispatch),
+  attributeActions: bindActionCreators(attributeActions, dispatch),
 })
 
 export default connect(

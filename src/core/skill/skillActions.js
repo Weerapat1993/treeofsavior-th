@@ -2,12 +2,6 @@
 import { payloadActions } from '../../utils'
 import { SKILL } from './skillActionTypes'
 
-// FETCH_SKILL
-// export const fetchSkill = () => fetchActions({
-//   type: SKILL.FETCH,
-//   API: API.SKILL
-// })
-
 export const fetchSkillRequest = (payload) => ({
   type: SKILL.FETCH.REQUEST,
   payload

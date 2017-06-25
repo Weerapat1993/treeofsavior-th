@@ -67,7 +67,8 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
     "redux-form": "^6.8.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "video-react": "^0.8.5"
   },
   "scripts": {
     "start": "node scripts/start.js",

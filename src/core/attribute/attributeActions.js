@@ -1,12 +1,30 @@
-import { API } from '../constants'
-import { fetchActions, payloadActions } from '../../utils'
+import { payloadActions } from '../../utils'
 import { ATTRIBUTE } from './attributeActionTypes'
 
-// FETCH_ATTRIBUTE
-export const fetchAttribute = () => fetchActions({
-  type: ATTRIBUTE.FETCH,
-  API: API.ATTRIBUTE
+export const fetchAttributeRequest = (payload) => ({
+  type: ATTRIBUTE.FETCH.REQUEST,
+  payload
 })
+export const fetchAttributeSuccess = (payload) => ({
+  type: ATTRIBUTE.FETCH.SUCCESS,
+  payload
+})
+export const fetchAttributeFailure = (payload) => ({
+  type: ATTRIBUTE.FETCH.FAILURE,
+  payload
+})
+
+export const fetchAttribute = () => (dispatch, getState) => {
+  const url = '/assets/data/attributes.json'
+  dispatch(fetchAttributeRequest(true))
+  return fetch(url, {
+    method: 'GET',
+    mode: 'no-cors'
+  })
+    .then(res => res.json())
+    .then(res => dispatch(fetchAttributeSuccess(res.data)))
+    .catch(error => dispatch(fetchAttributeFailure(error)))
+}
 
 // CREATE_ATTRIBUTE
 export const createAttribute = (payload) => payloadActions({

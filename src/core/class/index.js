@@ -5,5 +5,6 @@ export { classReducer } from './classReducer';
 export { 
   getNormalClass, 
   getClassInfo,
-  getClassSkill
+  getClassSkill,
+  getClassAttribute,
 } from './classSelector'

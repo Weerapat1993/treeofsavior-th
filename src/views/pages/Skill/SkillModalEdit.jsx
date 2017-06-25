@@ -14,14 +14,12 @@ class SkillModal extends Component {
   render() {
     const { data, handleSubmit, close, open, showModal, load } = this.props
     return (
-      <div>
-        <Modal show={showModal} onHide={open}>
-          <Modal.Header closeButton>
-            <Modal.Title>Edit Skill</Modal.Title>
-          </Modal.Header>
-          <SkillEditForm onSubmit={handleSubmit} close={close} data={data} load={load} />
-        </Modal>
-      </div>
+      <Modal show={showModal} onHide={open}>
+        <Modal.Header closeButton>
+          <Modal.Title>Edit Skill</Modal.Title>
+        </Modal.Header>
+        <SkillEditForm onSubmit={handleSubmit} close={close} data={data} load={load} />
+      </Modal>
     )
   }
 }

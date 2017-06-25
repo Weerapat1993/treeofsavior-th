@@ -7,7 +7,7 @@ import { classActions, getNormalClass } from '../../../core/class'
 import Case from 'case'
 
 import ClassType from './ClassType'
-import { Breadcrumbs, MenuHeader, TitleDisplay } from '../../components'
+import { Breadcrumbs, MenuHeader, Loading, TitleDisplay } from '../../components'
 
 const classTypes = ['Swordsman','Wizard','Archer','Cleric']
 
@@ -42,20 +42,19 @@ export class ClassList extends Component {
             </ButtonGroup>
           </div>
           <br/>
-          { 
-            !loading ?
-              <div className="row">
-                { 
-                  (classes.length) ?
-                  classTypes.map((item, i) => (
-                    <ClassType key={i+1} classes={classes} classType={item} selector={this.props.match.params.class_type} />
-                  ))
-                  : <TitleDisplay title='ไม่พบข้อมูลดังกล่าว' />
-                }
-              </div>
-            : <TitleDisplay title='กำลังดาวน์โหลดข้อมูล...' />
-          }
-          <hr/>
+          <Loading isLoading={loading}>
+            <div className="row">
+              { 
+                (classes.length) ?
+                classTypes.map((item, i) => (
+                  <ClassType key={i+1} classes={classes} classType={item} selector={this.props.match.params.class_type} />
+                ))
+                : <TitleDisplay title='ไม่พบข้อมูลดังกล่าว' />
+              }
+            </div>
+          </Loading>
+          <br/>
+          <br/>
         </div>
       </div>
     )

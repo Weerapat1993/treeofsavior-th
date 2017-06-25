@@ -7,6 +7,7 @@ import configureStore from './core/store'
 
 import './views/styles/bootstrap/app.scss'
 import './views/styles/font-awesome/css/font-awesome.css'
+import './views/styles/video-react/video-react.css'
 
 ReactDOM.render(
   <Provider store={configureStore()}>
