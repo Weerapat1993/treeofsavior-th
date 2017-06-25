@@ -7,7 +7,7 @@ export const keywordFilter = (keyword) => {
 export const attributeSelector = (data, keyword) => {
   if(keyword && !!data && Array.isArray(data)) {
     const key = keywordFilter(keyword)
-    return data.filter((item) => item.name.toLowerCase().indexOf(key) !== -1 )
+    return data.filter((item) => item.att_name.toLowerCase().indexOf(key) !== -1 )
   }
   const attributes = Attribute(data).orderBy('id','asc').get()
   return attributes

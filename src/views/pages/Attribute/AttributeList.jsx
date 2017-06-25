@@ -75,7 +75,7 @@ class AttributeList extends Component {
   render() {
     const { data, classes } = this.props
     return (
-      <div>
+      <div style={{ minHeight: 1000 }}>
         <div className='text-right'>
           <AttributeModal
             data={this.state.createAttribute}

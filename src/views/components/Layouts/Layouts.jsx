@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Button } from 'react-bootstrap'
 import ScrollToTop from 'react-scroll-up'
 import Navbars from './Navbars'
 
@@ -28,7 +27,7 @@ class Layout extends Component {
         <div className={className || 'container-fluid'}>
           {children}
         </div>
-        <ScrollToTop showUnder={160} style={styles.animationScroll}>
+        <ScrollToTop duration={1000} showUnder={160} style={styles.animationScroll}>
           <i className="fa fa-4x fa-arrow-circle-o-up scroll-up"></i>
         </ScrollToTop>
       </div>
