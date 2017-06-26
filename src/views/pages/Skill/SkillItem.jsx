@@ -7,7 +7,7 @@ import { url } from '../../../core/constants'
 import AttributeItemInSkill from '../Attribute/AttributeItemInSkill'
 
 const circleColor = (circle) => {
-  switch(circle) {
+  switch(+circle) {
     case 1: return 'success';
     case 2: return 'warning';
     case 3: return 'danger';

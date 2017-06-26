@@ -19,7 +19,7 @@ export const API = {
 export const api = (path) => `${API_BASE_URL}/api${path}`
 export const url = (path) => `${path}`
 
-export const API_FETCH_SKILL = '/assets/data/skills.json'
+export const API_FETCH_SKILL = api('/skills')
 export const API_CREATE_SKILL = api('/skills/store')
 export const API_UPDATE_SKILL = api('/skills/update')
 

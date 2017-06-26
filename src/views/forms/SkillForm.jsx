@@ -33,6 +33,11 @@ class SkillForm extends React.Component {
         <Modal.Body>
           <Field name='name' component={renderField} type='text' label='Skill Name' placeholder='Skill Name' />
           <Field name='description' component={renderField} type='text' label='Skill Description' placeholder='Skill Description' />
+          <Field name='max_level' component={renderField} type='number' label='Skill Max Level' placeholder='Skill Max Level' />
+          <Field name='circle' component={renderField} type='number' label='Skill Circle' placeholder='Skill Circle' />
+          <Field name='url' component={renderField} type='text' label='Link Video' placeholder='Link Video' />
+          <Field name='class_id' component={renderField} type='number' label='Class ID' placeholder='Class ID' />
+
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={close}>Close</Button>

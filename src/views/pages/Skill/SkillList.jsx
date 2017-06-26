@@ -34,11 +34,7 @@ class SkillList extends Component {
   }
 
   createSkill(value, dispatch, props) {
-    let data = {
-      id: new Date().getTime(),
-      name: value.name,
-      description: value.description,
-    }
+    let data = value
     this.props.skillActions.createSkill(data)
     this.setState({ showModal: false });
   }
@@ -129,8 +125,8 @@ class SkillList extends Component {
               data.map((item, i) => (
                 <SkillItem 
                   key={i} 
-                  Class={Classes(classes).where('id','=',item.class_id).firstOrFail()}
-                  attributes={Attribute(attributes).where('skill_id','=',item.id).get()}
+                  Class={Classes(classes).where('id','=',+item.class_id).firstOrFail()}
+                  attributes={Attribute(attributes).where('skill_id','=',+item.id).get()}
                   data={item} 
                   edit={this.editOpen.bind(this)}  
                   video={this.videoOpen.bind(this)}
