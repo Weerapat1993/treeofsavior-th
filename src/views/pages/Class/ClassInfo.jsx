@@ -9,6 +9,7 @@ import { attributeActions } from '../../../core/attribute'
 import { Breadcrumbs, Loading } from '../../components'
 import SkillList from '../Skill/SkillList'
 import { noImage } from '../../../utils'
+import { asset } from '../../../core/constants'
 
 const colorBtn = (rank) => {
   switch(rank) {
@@ -57,10 +58,10 @@ class ClassInfo extends Component {
                 <tbody>
                   <tr>
                     <td>
-                      <img onError={noImage} src={`http://treeofsavior-th.com/images/Classes/${Class.img_url}.gif`} style={{ height: 180 }} alt='' />
+                      <img onError={noImage} src={asset(`/images/Classes/${Class.img_url}.gif`)} style={{ height: 180 }} alt='' />
                     </td>
                     <td>
-                      <img src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(Class.name)}.png`} alt=""/>
+                      <img src={asset(`/images/icon-class/${Case.snake(Class.name)}.png`)} alt=""/>
                       <br/>
                       <a className={`btn ${colorBtn(Class.rank)} btn-xs`}>Rank {Class.rank}</a> 
                       <br/>

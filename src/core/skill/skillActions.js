@@ -1,8 +1,6 @@
-
-import { payloadActions } from '../../utils'
 import { SKILL } from './skillActionTypes'
 import {  
-  API_FETCH_SKILL, API_CREATE_SKILL, API_UPDATE_SKILL
+  API_FETCH_SKILL, API_CREATE_SKILL, API_UPDATE_SKILL, API_DELETE_SKILL
 } from '../../core/constants'
 
 export const fetchSkillRequest = (payload) => ({
@@ -87,19 +85,34 @@ export const updateSkill = (payload) => (dispatch, getState) => {
 }
 
 // DELETE_SKILL ======================================================
-// export const createSkill = (payload) => payloadActions({
-//   type: SKILL.CREATE,
-//   payload
-// })
-
-// DELETE_SKILL ======================================================
-// export const updateSkill = (payload) => payloadActions({
-//   type: SKILL.UPDATE,
-//   payload
-// })
-
-// DELETE_SKILL ======================================================
-export const deleteSkill = (payload) => payloadActions({
-  type: SKILL.DELETE,
+export const deleteSkillRequest = () => ({
+  type: SKILL.DELETE.REQUEST,
+})
+export const deleteSkillSuccess = (payload) => ({
+  type: SKILL.DELETE.SUCCESS,
   payload
 })
+export const deleteSkillFailure = (error, payload) => ({
+  type: SKILL.DELETE.FAILURE,
+  error: error.message,
+  payload
+})
+
+export const deleteSkill = (payload) => (dispatch, getState) => {
+  const url = API_DELETE_SKILL
+  const body = {
+    id: payload
+  } 
+  dispatch(deleteSkillRequest())
+  return fetch(url, {
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  })
+    .then(res => res.json())
+    .then(res => dispatch(deleteSkillSuccess(payload)))
+    .catch(error => dispatch(deleteSkillFailure(error, payload)))
+}

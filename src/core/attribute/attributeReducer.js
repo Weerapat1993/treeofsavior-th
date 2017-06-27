@@ -4,7 +4,8 @@ import { ATTRIBUTE } from './attributeActionTypes'
 
 const initialState = {
   data: [],
-  loading: true
+  loading: true,
+  error: false
 };
 
 export const attributeReducer = (state = initialState, action) => {

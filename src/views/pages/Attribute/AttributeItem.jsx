@@ -3,7 +3,7 @@ import { Button, ButtonGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Case from 'case'
 import { noImage } from '../../../utils'
-import { url } from '../../../core/constants'
+import { url, asset } from '../../../core/constants'
 
 class AttributeItem extends Component {
   handleClick(id) {
@@ -35,7 +35,7 @@ class AttributeItem extends Component {
                   <tbody>
                     <tr>
                       <td width={60}>
-                        <img onError={noImage} src={`http://www.treeofsavior-th.com/images/icon-attribute/${data.skill_id}_${Case.snake(data.att_name)}.png`} alt='' width={50} height={50}/>
+                        <img onError={noImage} src={asset(`/images/icon-attribute/${data.skill_id}_${Case.snake(data.att_name)}.png`)} alt='' width={50} height={50}/>
                         <br/>
                         <b>{data.att_name}</b>
                       </td>
@@ -56,7 +56,7 @@ class AttributeItem extends Component {
                   (Class) &&
                   <div>
                     <Link to={url(`/classes/show/${Class.id}`)}>
-                      <img onError={noImage} src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(Class.name)}.png`} style={{ width: 100 }} alt='' />
+                      <img onError={noImage} src={asset(`/images/icon-class/${Case.snake(Class.name)}.png`)} style={{ width: 100 }} alt='' />
                     </Link>
                     <div className="bold">
                       {Class.name}

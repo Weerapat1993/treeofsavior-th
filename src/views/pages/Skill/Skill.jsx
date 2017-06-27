@@ -37,7 +37,7 @@ class Skill extends Component {
   }
 
   render() {
-    const { skills, classes, attributes, skillLoading, attributeLoading } = this.props
+    const { skills, classes, attributes, skillLoading, attributeLoading, skillError } = this.props
     const skillFilter = skillSelector(skills, this.state.keyword)
     return (
       <div>
@@ -51,6 +51,7 @@ class Skill extends Component {
             data={skillFilter} 
             classes={classes}
             attributes={attributes}
+            error={skillError}
           />
         </Loading>
       </div>  
@@ -66,7 +67,8 @@ const mapStateToProps = (state, ownProps) => ({
   skills: state.skill.data,
   classes: state.class.data,
   attributes: state.attribute.data,
-  skillLoading: state.skill.loading,
+  skillLoading: state.skill.isFetching,
+  skillError: state.skill.error,
   attributeLoading: state.attribute.loading,
 })
 

@@ -7,7 +7,7 @@ import {
   Classes 
 } from '../../../core/model'
 
-import { url } from '../../../core/constants'
+import { url, asset } from '../../../core/constants'
 
 const colorBtn = (rank) => {
   switch(rank) {
@@ -33,7 +33,7 @@ export const ClassType = ({ classes, classType, selector }) => {
             <div className={i ? 'col-xs-6' : 'col-xs-12'} key={i}>
               <div>
                 <Link to={url(`/classes/show/${item.id}`)}>
-                  <img onError={noImage} src={`http://treeofsavior-th.com/images/icon-class/${Case.snake(item.name)}.png`} alt=""/>
+                  <img onError={noImage} src={asset(`/images/icon-class/${Case.snake(item.name)}.png`)} alt=""/>
                 </Link>
                 <br/>
                 <Button bsStyle={colorBtn(item.rank)} bsSize='xsmall'>Rank {item.rank}</Button>
@@ -47,7 +47,7 @@ export const ClassType = ({ classes, classType, selector }) => {
               <br/>
               <div>
                 <Link to={url(`/classes/show/${item.id}`)}>
-                  <img onError={noImage} src={`http://treeofsavior-th.com/images/Classes/${item.img_url}.gif`} style={{ height: 180 }} alt='' />
+                  <img onError={noImage} src={asset(`/images/Classes/${item.img_url}.gif`)} style={{ height: 180 }} alt='' />
                 </Link>
               </div>
             </div>

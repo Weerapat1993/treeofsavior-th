@@ -7,7 +7,8 @@
 export function loadingData(state, action) {
   return {
     data: state.data,
-    loading: action.payload
+    loading: action.payload,
+    error: false
   }
 }
 
@@ -19,7 +20,8 @@ export function loadingData(state, action) {
 export function fetchData(state,action) {
   return {
     loading: false,
-    data: action.payload
+    data: action.payload,
+    error: false
   }
 }
 
@@ -33,8 +35,9 @@ export function createData(state,action) {
     loading: false,
     data: [
       ...state.data,
-      action.payload
-    ]
+      action.payload,
+    ],
+    error: false
   }
 }
 
@@ -54,7 +57,8 @@ export function updateData(state,action) {
   })
   return {
     loading: false,
-    data: newState
+    data: newState,
+    error: false
   };
 }
 
@@ -66,6 +70,7 @@ export function updateData(state,action) {
 export function deleteData(state,action) {
   return {
     loading: false,
-    data: state.data.filter((item) => action.payload !== item.id)
+    data: state.data.filter((item) => action.payload !== item.id),
+    error: action.error.message
   }
 }

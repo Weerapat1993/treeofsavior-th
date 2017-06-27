@@ -35,6 +35,7 @@ class SkillList extends Component {
 
   createSkill(value, dispatch, props) {
     let data = value
+    console.log(data)
     this.props.skillActions.createSkill(data)
     this.setState({ showModal: false });
   }
@@ -85,7 +86,7 @@ class SkillList extends Component {
   }
 
   render() {
-    const { data, classes, attributes } = this.props
+    const { data, classes, attributes, error } = this.props
     return (
       <div style={{ minHeight: 750 }}>
         <div className='text-right'>
@@ -95,6 +96,7 @@ class SkillList extends Component {
             open={this.open.bind(this)} 
             close={this.close.bind(this)}
             showModal={this.state.showModal}
+            classes={classes}
           />
         </div>
         <SkillModalEdit
@@ -104,6 +106,7 @@ class SkillList extends Component {
           open={this.editOpen.bind(this)} 
           close={this.editClose.bind(this)}
           showModal={this.state.showModalEdit}
+          classes={classes}
         />
         <SkillModalVideo
           data={this.state.updateSkill}
@@ -136,7 +139,7 @@ class SkillList extends Component {
             }
             </div>
           </div>
-          : <TitleDisplay title='ไม่พบข้อมูลดังกล่าว' />
+          : <TitleDisplay title={error ? error : 'ไม่พบข้อมูลดังกล่าว'} />
         }
       </div>
     )

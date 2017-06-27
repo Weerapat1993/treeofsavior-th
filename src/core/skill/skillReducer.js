@@ -1,30 +1,26 @@
-import { loadingData, fetchData, deleteData } from '../../utils'
+import { loadingData, fetchData } from '../../utils'
 // import { SKILL } from '../constants'
 import { SKILL } from './skillActionTypes'
 import { 
   reducerCreateSkillRequest, reducerCreateSkillSuccess, reducerCreateSkillFailure,
   reducerUpdateSkillRequest, reducerUpdateSkillSuccess, reducerUpdateSkillFailure,
+  reducerDeleteSkillRequest, reducerDeleteSkillSuccess, reducerDeleteSkillFailure
 } from './skillFunction'
 
 const initialState = {
   data: [],
-  loading: true
+  isFetching: false,
+  error: false
 };
 
 export const skillReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SKILL.FETCH.REQUEST:
-    case SKILL.DELETE.REQUEST:
-    case SKILL.FETCH.FAILURE:
-    case SKILL.DELETE.FAILURE:
-      return loadingData(state, action)
     // FETCH_SKILL_SUCCESS: ================================
+    case SKILL.FETCH.REQUEST:
+    case SKILL.FETCH.FAILURE:
+      return loadingData(state, action)
     case SKILL.FETCH.SUCCESS:
       return fetchData(state,action)
-    // case SKILL.CREATE.SUCCESS:
-    //   return createData(state,action)
-    // case SKILL.UPDATE.SUCCESS:
-    //   return updateData(state,action)
     // CREATE_SKILL: ================================
     case SKILL.CREATE.REQUEST:
       return reducerCreateSkillRequest(state, action)
@@ -39,9 +35,13 @@ export const skillReducer = (state = initialState, action) => {
       return reducerUpdateSkillSuccess(state, action)
     case SKILL.UPDATE.FAILURE:
       return reducerUpdateSkillFailure(state, action)
-    // CREATE_SKILL_SUCCESS: ================================
+    // UPDATE_SKILL_SUCCESS: ================================
+    case SKILL.DELETE.REQUEST:
+      return reducerDeleteSkillRequest(state, action)
     case SKILL.DELETE.SUCCESS:
-      return deleteData(state,action)
+      return reducerDeleteSkillSuccess(state, action)
+    case SKILL.DELETE.FAILURE:
+      return reducerDeleteSkillFailure(state, action)
     // DEFAULT: ================================
     default:
       return state

@@ -60,9 +60,7 @@ export const reducerUpdateSkillRequest = (state, action) => ({
 })
 
 export const reducerUpdateSkillSuccess = (state, action) => {
-  console.log(state.data)
   const newState = Skill(state.data).where('id','=',action.payload.id).update(action.payload)
-  console.log(newState)
   return {
     ...state,
     data: newState,
@@ -72,6 +70,30 @@ export const reducerUpdateSkillSuccess = (state, action) => {
 }
 
 export const reducerUpdateSkillFailure = (state, action) => ({
+  ...state,
+  error: action.error,
+  isFetching: false
+})
+
+// REDUCER : DELETE_SKILL --------------------------------------------------------
+
+export const reducerDeleteSkillRequest = (state, action) => ({
+  ...state,
+  error: false,
+  isFetching: true
+})
+
+export const reducerDeleteSkillSuccess = (state, action) => {
+  const newState = Skill(state.data).where('id','!=',action.payload).get()
+  return {
+    ...state,
+    data: newState,
+    error: false,
+    isFetching: false
+  }
+}
+
+export const reducerDeleteSkillFailure = (state, action) => ({
   ...state,
   error: action.error,
   isFetching: false

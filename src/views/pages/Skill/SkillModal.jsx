@@ -12,7 +12,7 @@ class SkillModal extends Component {
   }
 
   render() {
-    const { data, handleSubmit, close, open, showModal } = this.props
+    const { data, handleSubmit, close, open, showModal, classes } = this.props
     return (
       <div>
         <Button bsStyle='primary' onClick={open} >
@@ -22,7 +22,7 @@ class SkillModal extends Component {
           <Modal.Header closeButton>
             <Modal.Title>Create New Skill</Modal.Title>
           </Modal.Header>
-          <SkillForm onSubmit={handleSubmit} close={close} data={data} />
+          <SkillForm onSubmit={handleSubmit} close={close} data={data} classes={classes} />
         </Modal>
       </div>
     )

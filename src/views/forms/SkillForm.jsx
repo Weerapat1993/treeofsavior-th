@@ -25,19 +25,37 @@ const renderField = (field) => (
   </FormGroup>
   )
 
+// outside your render() method
+const selectField = (field) => (
+  <FormGroup
+    controlId="formBasicText"
+    validationState={getValidationState(field.meta)}
+  >
+    <ControlLabel>{field.label}</ControlLabel>
+    <FormControl componentClass="select" placeholder={field.placeholder}>
+      {
+        field.options.map((item, i) => (
+          <option key={item.id} value={item.id}>{item.name}</option>
+        ))
+      }
+    </FormControl>
+    <FormControl.Feedback />
+    { field.meta.touched && field.meta.error && <HelpBlock>{field.meta.error}</HelpBlock> }
+  </FormGroup>
+  )
+
 class SkillForm extends React.Component {
   render() {
-    const { handleSubmit, close } = this.props
+    const { handleSubmit, close, classes } = this.props
     return (
       <form onSubmit={handleSubmit}>
         <Modal.Body>
           <Field name='name' component={renderField} type='text' label='Skill Name' placeholder='Skill Name' />
           <Field name='description' component={renderField} type='text' label='Skill Description' placeholder='Skill Description' />
-          <Field name='max_level' component={renderField} type='number' label='Skill Max Level' placeholder='Skill Max Level' />
-          <Field name='circle' component={renderField} type='number' label='Skill Circle' placeholder='Skill Circle' />
+          <Field name='max_level' component={renderField} type='number' min={1} max={15} label='Skill Max Level' placeholder='Skill Max Level' />
+          <Field name='circle' component={renderField} type='number' min={1} max={3} label='Skill Circle' placeholder='Skill Circle' />
           <Field name='url' component={renderField} type='text' label='Link Video' placeholder='Link Video' />
-          <Field name='class_id' component={renderField} type='number' label='Class ID' placeholder='Class ID' />
-
+          <Field name='class_id' component={selectField} options={classes} label='Class' placeholder='Class' />
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={close}>Close</Button>

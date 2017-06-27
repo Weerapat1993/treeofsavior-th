@@ -4,7 +4,8 @@ import { CLASS } from './classActionTypes'
 
 const initialState = {
   data: [],
-  loading: true
+  loading: true,
+  error: false
 };
 
 export const classReducer = (state = initialState, action) => {

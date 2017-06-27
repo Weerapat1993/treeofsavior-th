@@ -4,7 +4,8 @@ import { GALLERY } from './galleryActionTypes'
 
 const initialState = {
   data: [],
-  loading: true
+  loading: true,
+  error: false
 };
 
 export const galleryReducer = (state = initialState, action) => {
