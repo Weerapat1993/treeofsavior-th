@@ -1,4 +1,4 @@
-import { Collection } from '../utils'
+import Collection from 'array-collection'
 
 const Model = (data, primaryKey) => new Collection(data, primaryKey)
 
