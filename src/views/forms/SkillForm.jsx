@@ -1,6 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { FormGroup, ControlLabel, FormControl, HelpBlock, Button, Modal } from 'react-bootstrap'
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm, formValueSelector } from 'redux-form'
 import { skillValidation } from '../../core/form/skillValidation'
 
 const getValidationState = (meta) => {
@@ -32,7 +33,8 @@ const selectField = (field) => (
     validationState={getValidationState(field.meta)}
   >
     <ControlLabel>{field.label}</ControlLabel>
-    <FormControl componentClass="select" placeholder={field.placeholder}>
+    <FormControl componentClass="select" {...field.input}>
+      <option value=''>-- {field.label} --</option>
       {
         field.options.map((item, i) => (
           <option key={item.id} value={item.id}>{item.name}</option>
@@ -55,7 +57,7 @@ class SkillForm extends React.Component {
           <Field name='max_level' component={renderField} type='number' min={1} max={15} label='Skill Max Level' placeholder='Skill Max Level' />
           <Field name='circle' component={renderField} type='number' min={1} max={3} label='Skill Circle' placeholder='Skill Circle' />
           <Field name='url' component={renderField} type='text' label='Link Video' placeholder='Link Video' />
-          <Field name='class_id' component={selectField} options={classes} label='Class' placeholder='Class' />
+          <Field name='class_id' component={selectField} options={classes} label='Class' />
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={close}>Close</Button>

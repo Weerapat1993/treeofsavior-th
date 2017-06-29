@@ -6,4 +6,5 @@ export const skillValidation = createValidator({
   circle: [required, integer],
   max_level: [required, integer],
   url: [],
+  class_id: [required, integer],
 })
