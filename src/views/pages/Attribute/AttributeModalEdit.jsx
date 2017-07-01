@@ -12,14 +12,14 @@ class AttributeModal extends Component {
   }
 
   render() {
-    const { data, handleSubmit, close, open, showModal, load } = this.props
+    const { data, handleSubmit, close, open, showModal, load, classes, skills  } = this.props
     return (
       <div>
         <Modal show={showModal} onHide={open}>
           <Modal.Header closeButton>
             <Modal.Title>Create New Attribute</Modal.Title>
           </Modal.Header>
-          <AttributeEditForm onSubmit={handleSubmit} close={close} data={data} load={load} />
+          <AttributeEditForm onSubmit={handleSubmit} close={close} data={data} load={load} classes={classes} skills={skills} />
         </Modal>
       </div>
     )

@@ -28,12 +28,12 @@ then
   done
 
   # Files Core #
-  files=( Actions ActionTypes Reducer Selector )
+  files=( Actions ActionTypes Reducer Selector Function )
   for file in "${files[@]}"
   do
     if ! [ -e "./src/core/${CORE}/${CORE}${file}.js" ]
     then
-      sh ./app/Console/build.sh ./app/Console/templates/core/${file}.js ./src/core/${CORE}/${CORE}${file}.js
+      sh ./app/Console/build.sh ./app/Console/templates/core/skill${file}.js ./src/core/${CORE}/${CORE}${file}.js
     fi
   done
 
@@ -44,19 +44,19 @@ then
   fi
 
   # File Tests #
-  tests=( Actions Reducer Selector )
-  for test in "${tests[@]}"
-  do
-    if ! [ -e "./src/core/${CORE}/tests/${CORE}${test}.test.js" ]
-    then
-      sh ./app/Console/build.sh ./app/Console/templates/core/tests/${test}.js ./src/core/${CORE}/tests/${CORE}${test}.test.js
-    fi
-  done
+#  tests=( Actions Reducer Selector )
+#  for test in "${tests[@]}"
+#  do
+#    if ! [ -e "./src/core/${CORE}/tests/${CORE}${test}.test.js" ]
+#    then
+#      sh ./app/Console/build.sh ./app/Console/templates/core/tests/${test}.js ./src/core/${CORE}/tests/${CORE}${test}.test.js
+#    fi
+#  done
 
-  if ! [ -e "./src/core/${CORE}/tests/data.js" ]
-  then
-    sh ./app/Console/build.sh ./app/Console/templates/core/tests/data.js ./src/core/${CORE}/tests/data.js
-  fi
+#  if ! [ -e "./src/core/${CORE}/tests/data.js" ]
+#  then
+#    sh ./app/Console/build.sh ./app/Console/templates/core/tests/data.js ./src/core/${CORE}/tests/data.js
+#  fi
 
   if [ $CHECK -eq 0 ]
   then

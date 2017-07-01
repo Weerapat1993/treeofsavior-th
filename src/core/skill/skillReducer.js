@@ -1,7 +1,6 @@
-import { loadingData, fetchData } from '../../utils'
-// import { SKILL } from '../constants'
 import { SKILL } from './skillActionTypes'
 import { 
+  reducerFetchSkillRequest, reducerFetchSkillSuccess, reducerFetchSkillFailure,
   reducerCreateSkillRequest, reducerCreateSkillSuccess, reducerCreateSkillFailure,
   reducerUpdateSkillRequest, reducerUpdateSkillSuccess, reducerUpdateSkillFailure,
   reducerDeleteSkillRequest, reducerDeleteSkillSuccess, reducerDeleteSkillFailure
@@ -17,10 +16,11 @@ export const skillReducer = (state = initialState, action) => {
   switch (action.type) {
     // FETCH_SKILL_SUCCESS: ================================
     case SKILL.FETCH.REQUEST:
-    case SKILL.FETCH.FAILURE:
-      return loadingData(state, action)
+      return reducerFetchSkillRequest(state, action)
     case SKILL.FETCH.SUCCESS:
-      return fetchData(state,action)
+      return reducerFetchSkillSuccess(state, action)
+    case SKILL.FETCH.FAILURE:
+      return reducerFetchSkillFailure(state, action)
     // CREATE_SKILL: ================================
     case SKILL.CREATE.REQUEST:
       return reducerCreateSkillRequest(state, action)

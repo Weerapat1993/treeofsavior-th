@@ -12,7 +12,7 @@ class AttributeModal extends Component {
   }
 
   render() {
-    const { data, handleSubmit, close, open, showModal } = this.props
+    const { data, handleSubmit, close, open, showModal, classes, skills } = this.props
     return (
       <div>
         <Button bsStyle='primary' onClick={open} >
@@ -22,7 +22,7 @@ class AttributeModal extends Component {
           <Modal.Header closeButton>
             <Modal.Title>Create New Attribute</Modal.Title>
           </Modal.Header>
-          <AttributeForm onSubmit={handleSubmit} close={close} data={data} />
+          <AttributeForm onSubmit={handleSubmit} close={close} data={data} classes={classes} skills={skills} />
         </Modal>
       </div>
     )

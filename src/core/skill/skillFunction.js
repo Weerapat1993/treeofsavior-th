@@ -32,7 +32,7 @@ export const reducerCreateSkillRequest = (state, action) => ({
 
 export const reducerCreateSkillSuccess = (state, action) => {
   const newState = Skill(state.data).insert({
-    id: `skill:${randStr(50)}`,
+    id: 'skill:'+randStr(50),
     ...action.payload
   })
 

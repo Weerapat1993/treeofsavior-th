@@ -9,7 +9,7 @@ import SkillModal from './SkillModal'
 import SkillModalEdit from './SkillModalEdit'
 import SkillModalVideo from './SkillModalVideo'
 import SkillItem from './SkillItem'
-import { Classes, Attribute } from '../../../core/model'
+import { Classes, Attribute, SkillFillable } from '../../../core/model'
 import { TitleDisplay } from '../../components'
 
 class SkillList extends Component {
@@ -34,7 +34,7 @@ class SkillList extends Component {
   }
 
   createSkill(value, dispatch, props) {
-    let data = value
+    let data = SkillFillable(value)
     console.log(data)
     this.props.skillActions.createSkill(data)
     this.setState({ showModal: false });

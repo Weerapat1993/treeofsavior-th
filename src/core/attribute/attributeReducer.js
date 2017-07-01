@@ -1,36 +1,47 @@
-import { loadingData, fetchData, createData, updateData, deleteData } from '../../utils'
-// import { ATTRIBUTE } from '../constants'
 import { ATTRIBUTE } from './attributeActionTypes'
+import { 
+  reducerFetchAttributeRequest, reducerFetchAttributeSuccess, reducerFetchAttributeFailure,
+  reducerCreateAttributeRequest, reducerCreateAttributeSuccess, reducerCreateAttributeFailure,
+  reducerUpdateAttributeRequest, reducerUpdateAttributeSuccess, reducerUpdateAttributeFailure,
+  reducerDeleteAttributeRequest, reducerDeleteAttributeSuccess, reducerDeleteAttributeFailure
+} from './attributeFunction'
 
 const initialState = {
   data: [],
-  loading: true,
+  isFetching: false,
   error: false
 };
 
 export const attributeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ATTRIBUTE.FETCH.REQUEST:
-    case ATTRIBUTE.CREATE.REQUEST:
-    case ATTRIBUTE.UPDATE.REQUEST:
-    case ATTRIBUTE.DELETE.REQUEST:
-    case ATTRIBUTE.FETCH.FAILURE:
-    case ATTRIBUTE.CREATE.FAILURE:
-    case ATTRIBUTE.UPDATE.FAILURE:
-    case ATTRIBUTE.DELETE.FAILURE:
-      return loadingData(state, action)
     // FETCH_ATTRIBUTE_SUCCESS: ================================
+    case ATTRIBUTE.FETCH.REQUEST:
+      return reducerFetchAttributeRequest(state, action)
     case ATTRIBUTE.FETCH.SUCCESS:
-      return fetchData(state,action)
-    // CREATE_ATTRIBUTE_SUCCESS: ================================
+      return reducerFetchAttributeSuccess(state, action)
+    case ATTRIBUTE.FETCH.FAILURE:
+      return reducerFetchAttributeFailure(state, action)
+    // CREATE_ATTRIBUTE: ================================
+    case ATTRIBUTE.CREATE.REQUEST:
+      return reducerCreateAttributeRequest(state, action)
     case ATTRIBUTE.CREATE.SUCCESS:
-      return createData(state,action)
+      return reducerCreateAttributeSuccess(state, action)
+    case ATTRIBUTE.CREATE.FAILURE:
+      return reducerCreateAttributeFailure(state, action)
     // UPDATE_ATTRIBUTE_SUCCESS: ================================
+    case ATTRIBUTE.UPDATE.REQUEST:
+      return reducerUpdateAttributeRequest(state, action)
     case ATTRIBUTE.UPDATE.SUCCESS:
-      return updateData(state,action)
-    // CREATE_ATTRIBUTE_SUCCESS: ================================
+      return reducerUpdateAttributeSuccess(state, action)
+    case ATTRIBUTE.UPDATE.FAILURE:
+      return reducerUpdateAttributeFailure(state, action)
+    // UPDATE_ATTRIBUTE_SUCCESS: ================================
+    case ATTRIBUTE.DELETE.REQUEST:
+      return reducerDeleteAttributeRequest(state, action)
     case ATTRIBUTE.DELETE.SUCCESS:
-      return deleteData(state,action)
+      return reducerDeleteAttributeSuccess(state, action)
+    case ATTRIBUTE.DELETE.FAILURE:
+      return reducerDeleteAttributeFailure(state, action)
     // DEFAULT: ================================
     default:
       return state

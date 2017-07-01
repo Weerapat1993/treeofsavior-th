@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, ButtonGroup } from 'react-bootstrap'
+import { Card, CardMenu, CardText } from 'react-mdl'
 import { Link } from 'react-router-dom'
 import Case from 'case'
 import { noImage } from '../../../utils'
@@ -16,8 +17,36 @@ class AttributeItem extends Component {
   render() {
     const { data, edit, Class } = this.props
     return (
-      <div>
-        <div className='text-right'>
+
+      <Card shadow={0} style={{ width: '100%', margin: 'auto', marginBottom: 20 }}>
+        <CardText>
+          <table width='100%'>
+            <tbody>
+              <tr>
+                <td width={90} className='text-center' style={{ verticalAlign: 'top' }}>
+                  <table className='text-center'>
+                    <tbody>
+                      <tr>
+                        <td width={60}>
+                          <img onError={noImage} src={asset(`/images/icon-attribute/${data.skill_id}_${Case.snake(data.att_name)}.png`)} alt='' width={50} height={50}/>
+                          <br/>
+                          <b>{data.att_name}</b>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td style={{ verticalAlign: 'top' }}>
+                  <b>ชื่อ Attribute :</b> {data.att_name} <br/>
+                  <b>เลเวลสูงสุด :</b> {data.att_max_lv} <br/>
+                  <b>รายละเอียด :</b> {data.att_description} <br/>
+                  <b>อาชีพ :</b> <Link to={url(`/classes/show/${Class.id}`)}>{Class.name}</Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </CardText>
+        <CardMenu style={{color: 'black'}}>
           <ButtonGroup>
             <Button bsStyle='primary' onClick={() => edit(data)} bsSize='xsmall' >
               <i className='fa fa-edit'></i> 
@@ -26,48 +55,8 @@ class AttributeItem extends Component {
               <i className='fa fa-trash'></i> 
             </Button>
           </ButtonGroup>
-        </div>
-        <table width='100%'>
-          <tbody>
-            <tr>
-              <td width={75} className='text-center' style={{ verticalAlign: 'top' }}>
-                <table className='text-center'>
-                  <tbody>
-                    <tr>
-                      <td width={60}>
-                        <img onError={noImage} src={asset(`/images/icon-attribute/${data.skill_id}_${Case.snake(data.att_name)}.png`)} alt='' width={50} height={50}/>
-                        <br/>
-                        <b>{data.att_name}</b>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-              <td style={{ verticalAlign: 'top' }}>
-                <b>ชื่อ Attribute :</b> {data.att_name} <br/>
-                <b>เลเวลสูงสุด :</b> {data.att_max_lv} <br/>
-                <b>รายละเอียด :</b> {data.att_description} <br/>
-                <span className='visible-xs'>
-                  <b>อาชีพ :</b> <Link to={url(`/classes/show/${Class.id}`)}>{Class.name}</Link>
-                </span>
-              </td>
-              <td width={75} className='text-center hidden-xs'>
-                {
-                  (Class) &&
-                  <div>
-                    <Link to={url(`/classes/show/${Class.id}`)}>
-                      <img onError={noImage} src={asset(`/images/icon-class/${Case.snake(Class.name)}.png`)} style={{ width: 100 }} alt='' />
-                    </Link>
-                    <div className="bold">
-                      {Class.name}
-                    </div>
-                  </div>
-                }
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        </CardMenu>
+      </Card>
     )
   }
   

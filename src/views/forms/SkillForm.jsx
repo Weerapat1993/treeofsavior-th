@@ -62,7 +62,7 @@ const selectField = (field) => (
 class SkillForm extends React.Component {
   render() {
     const { handleSubmit, close, classes, forms } = this.props
-    const { circle, name, class_id, description, max_level, url } = forms
+    const { circle, name, class_id, description, max_level } = forms
     const icon_name = `${class_id}_${Case.snake(name)}`
     const Class = Skill(classes).find(+class_id).firstOrFail()
     console.log(Class)

@@ -9,6 +9,8 @@ import './views/styles/loading/loading.css'
 import './views/styles/bootstrap/app.scss'
 import './views/styles/font-awesome/css/font-awesome.css'
 import './views/styles/video-react/video-react.css'
+import 'react-mdl/extra/material.css';
+import 'react-mdl/extra/material.js';
 
 ReactDOM.render(
   <Provider store={configureStore()}>

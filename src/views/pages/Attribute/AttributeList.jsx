@@ -3,12 +3,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { 
+  Grid,
+  Cell,
+} from 'react-mdl'
 
 import { attributeActions } from '../../../core/attribute'
 import AttributeModal from './AttributeModal'
 import AttributeModalEdit from './AttributeModalEdit'
 import AttributeItem from './AttributeItem'
-import { Classes } from '../../../core/model'
+import { Classes, AttributeFillable } from '../../../core/model'
 import { TitleDisplay } from '../../components'
 
 class AttributeList extends Component {
@@ -32,11 +36,7 @@ class AttributeList extends Component {
   }
 
   createAttribute(value, dispatch, props) {
-    let data = {
-      id: new Date().getTime(),
-      name: value.name,
-      description: value.description,
-    }
+    let data = AttributeFillable(value)
     this.props.attributeActions.createAttribute(data)
     this.setState({ showModal: false });
   }
@@ -73,16 +73,20 @@ class AttributeList extends Component {
   }
 
   render() {
-    const { data, classes } = this.props
+    const { data, classes, skills } = this.props
     return (
-      <div style={{ minHeight: 750 }}>
-        <div className='text-right'>
+      <Grid style={{ minHeight: 750 }}>
+        <Cell col={2} hidePhone hideTablet />
+        <Cell col={8}>
+          <div className='text-right'>
           <AttributeModal
             data={this.state.createAttribute}
             handleSubmit={this.createAttribute.bind(this)} 
             open={this.open.bind(this)} 
             close={this.close.bind(this)}
             showModal={this.state.showModal}
+            classes={classes}
+            skills={skills}
           />
         </div>
         <AttributeModalEdit
@@ -92,32 +96,26 @@ class AttributeList extends Component {
           open={this.editOpen.bind(this)} 
           close={this.editClose.bind(this)}
           showModal={this.state.showModalEdit}
+          classes={classes}
+          skills={skills}
         />
         <br/>
         <br/>
         {
           (data.length) ?
-          <div className='panel panel-default'>
-            <div className="panel-heading bold">
-              Skill Attribute List
-            </div>
-            <div className='panel-body'>
-            { 
-              data.map((item, i) => (
-                <AttributeItem 
-                  key={i} 
-                  Class={Classes(classes).where('id','=',item.class_id).firstOrFail()}
-                  data={item} 
-                  edit={this.editOpen.bind(this)}  
-                  deleteAttribute={this.deleteAttribute.bind(this)} 
-                />
-              ))
-            }
-            </div>
-          </div>
+            data.map((item, i) => (
+              <AttributeItem 
+                key={i} 
+                Class={Classes(classes).where('id','=',item.class_id).firstOrFail()}
+                data={item} 
+                edit={this.editOpen.bind(this)}  
+                deleteAttribute={this.deleteAttribute.bind(this)} 
+              />
+            ))
           : <TitleDisplay title='ไม่พบข้อมูลดังกล่าว' />
         }
-      </div>
+        </Cell>
+      </Grid>
     )
   }
 }

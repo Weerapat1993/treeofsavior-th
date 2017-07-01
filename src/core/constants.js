@@ -25,6 +25,11 @@ export const API_CREATE_SKILL = api('/skills/store')
 export const API_UPDATE_SKILL = api('/skills/update')
 export const API_DELETE_SKILL = api('/skills/delete')
 
+export const API_FETCH_ATTRIBUTE = api('/attributes')
+export const API_CREATE_ATTRIBUTE = api('/attributes/store')
+export const API_UPDATE_ATTRIBUTE = api('/attributes/update')
+export const API_DELETE_ATTRIBUTE = api('/attributes/delete')
+
 //=====================================
 //  ACTION_TYPE
 //-------------------------------------

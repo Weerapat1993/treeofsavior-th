@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import { attributeActions, attributeSelector } from '../../../core/attribute'
 import { classActions } from '../../../core/class'
+import { skillActions } from '../../../core/skill'
 import AttributeList from './AttributeList'
 import { Breadcrumbs, MenuHeader, Loading, SearchBox } from '../../components'
 
@@ -23,17 +24,21 @@ class Attribute extends Component {
   }
 
   componentDidMount() {
-    const { classActions, attributeActions, classes, attributes } = this.props
+    const { classActions, attributeActions, skillActions, classes, attributes, skills } = this.props
     if(!classes.length) {
       classActions.fetchClass()
     }
     if(!attributes.length) {
       attributeActions.fetchAttribute()
     }
+    if(!skills.length) {
+      skillActions.fetchSkill()
+    }
+
   }
 
   render() {
-    const { attributes, classes, loading } = this.props
+    const { attributes, classes, skills, attributeLoading, classLoading, skillLoading } = this.props
     const attributeFilter = attributeSelector(attributes, this.state.keyword)
     return (
       <div>
@@ -42,10 +47,11 @@ class Attribute extends Component {
         <SearchBox placeholder='Search Attribute' onKey={this.searchAttribute.bind(this)} />
         <br/>
         <br/>
-        <Loading isLoading={loading}>
+        <Loading isLoading={attributeLoading || classLoading || skillLoading}>
           <AttributeList 
             data={attributeFilter} 
             classes={classes}
+            skills={skills}
           />
         </Loading>
       </div>  
@@ -60,12 +66,16 @@ class Attribute extends Component {
 const mapStateToProps = (state, ownProps) => ({
   attributes: state.attribute.data,
   classes: state.class.data,
-  loading: state.attribute.loading,
+  skills: state.skill.data,
+  attributeLoading: state.attribute.loading,
+  skillLoading: state.skill.loading,
+  classLoading: state.class.loading,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   attributeActions: bindActionCreators(attributeActions, dispatch),
   classActions: bindActionCreators(classActions, dispatch),
+  skillActions: bindActionCreators(skillActions, dispatch),
 })
 
 export default connect(

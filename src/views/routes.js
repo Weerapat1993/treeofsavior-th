@@ -15,8 +15,9 @@ import {
 
 const Routes = () => (
   <Router>
+    <div>
     <Layouts className='container'>
-      <Route exact path="/" component={Home}/>
+      {/*<Route exact path="/" component={Home}/>*/}
       <Route exact path={url('/')} component={Home}/>
       <Route path={url('/about')} component={About}/>
       <Route path={url('/gallery')} component={Gallery}/>
@@ -26,6 +27,7 @@ const Routes = () => (
       <Route path={url('/login')} component={Login}/>
       <Route path={url('/register')} component={Register}/>
     </Layouts>
+    </div>
   </Router> 
 )
 
