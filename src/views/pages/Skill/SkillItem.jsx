@@ -5,15 +5,7 @@ import Case from 'case'
 import { noImage } from '../../../utils'
 import { url, asset } from '../../../core/constants'
 import AttributeItemInSkill from '../Attribute/AttributeItemInSkill'
-
-const circleColor = (circle) => {
-  switch(+circle) {
-    case 1: return 'success';
-    case 2: return 'warning';
-    case 3: return 'danger';
-    default: return 'default';
-  }
-} 
+import SkillItemIcon from './SkillItemIcon'
 
 class SkillItem extends Component {
   handleClick(id) {
@@ -41,22 +33,7 @@ class SkillItem extends Component {
           <tbody>
             <tr>
               <td width={75} className='text-center' style={{ verticalAlign: 'top' }}>
-                <table className='text-center'>
-                  <tbody>
-                    <tr>
-                      <td width={60}>
-                        <img onError={noImage} src={`http://www.treeofsavior-th.com/images/icon-skill/${data.class_id}_${Case.snake(data.name)}.png`} alt='' width={60} height={60}/>
-                        <Button bsStyle={`${circleColor(data.circle)}`} block bsSize='xsmall'>Circle {data.circle}</Button>
-                        {
-                          (data.url) &&
-                          <Button bsStyle='primary' block bsSize='xsmall' onClick={() => video(data)}>
-                            Video
-                          </Button>
-                        } 
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <SkillItemIcon skill={data} video={video} />
               </td>
               <td style={{ verticalAlign: 'top' }}>
                 <b>ชื่อสกิล :</b> {data.name} <br/>

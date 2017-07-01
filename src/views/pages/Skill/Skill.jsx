@@ -69,7 +69,7 @@ const mapStateToProps = (state, ownProps) => ({
   attributes: state.attribute.data,
   skillLoading: state.skill.isFetching,
   skillError: state.skill.error,
-  attributeLoading: state.attribute.loading,
+  attributeLoading: state.attribute.isFetching,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

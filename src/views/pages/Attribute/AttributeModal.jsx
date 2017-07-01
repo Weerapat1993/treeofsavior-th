@@ -18,7 +18,7 @@ class AttributeModal extends Component {
         <Button bsStyle='primary' onClick={open} >
           <i className='fa fa-plus'></i> Create New Attribute
         </Button>
-        <Modal show={showModal} onHide={open}>
+        <Modal show={showModal} onHide={close}>
           <Modal.Header closeButton>
             <Modal.Title>Create New Attribute</Modal.Title>
           </Modal.Header>

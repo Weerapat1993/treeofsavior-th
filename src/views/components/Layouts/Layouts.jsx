@@ -11,7 +11,7 @@ import ScrollToTop from 'react-scroll-up'
 import DocumentTitle from 'react-document-title';
 import classNames from 'classnames';
 
-import Navbars from './Navbars'
+// import Navbars from './Navbars'
 import Footers from './Footers'
 import { url } from '../../../core/constants'
 

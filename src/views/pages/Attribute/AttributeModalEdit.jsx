@@ -15,7 +15,7 @@ class AttributeModal extends Component {
     const { data, handleSubmit, close, open, showModal, load, classes, skills  } = this.props
     return (
       <div>
-        <Modal show={showModal} onHide={open}>
+        <Modal show={showModal} onHide={close}>
           <Modal.Header closeButton>
             <Modal.Title>Create New Attribute</Modal.Title>
           </Modal.Header>
