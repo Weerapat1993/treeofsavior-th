@@ -5,7 +5,9 @@ import Register from './Register'
 import Gallery from './Gallery' 
 import Class from './Class'
 import Skill from './Skill'  
-import Attribute from './Attribute'  
+import Attribute from './Attribute'
+import Elements from './Elements'  
+import SkillSimulator from './SkillSimulator'    
 
 export { 
   Home,
@@ -16,4 +18,6 @@ export {
   Class,
   Skill,
   Attribute,
+  Elements,
+  SkillSimulator,
 } 

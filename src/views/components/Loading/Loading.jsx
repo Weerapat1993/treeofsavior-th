@@ -5,7 +5,7 @@ export const Loading = ({ isLoading, children }) => (
   <div>
     {
       isLoading ? 
-        <div className="text-center">
+        <div className="text-center" style={{ minHeight: 1000 }}>
           <div className="cssload-fond text-center">
             <div className="cssload-container-general">
                 <div className="cssload-internal"><div className="cssload-ballcolor cssload-ball_1"> </div></div>

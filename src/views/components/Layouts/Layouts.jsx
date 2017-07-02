@@ -12,7 +12,6 @@ import ScrollToTop from 'react-scroll-up'
 import DocumentTitle from 'react-document-title';
 import classNames from 'classnames';
 
-// import Navbars from './Navbars'
 import Footers from './Footers'
 import { url } from '../../../core/constants'
 
@@ -76,6 +75,8 @@ class Layouts extends Component {
               <Link style={{ textDecoration: 'none' }} to={url('/')}><i className="material-icons">home</i> &nbsp; Home</Link>
               <Link style={{ textDecoration: 'none' }} to={url('/about')}><i className="material-icons">search</i> &nbsp; About</Link>
               <Link style={{ textDecoration: 'none' }} to={url('/classes')}><i className="material-icons">class</i> &nbsp; Classes</Link>
+              <Link style={{ textDecoration: 'none' }} to={url('/elements')}><i className="material-icons">ac_unit</i> &nbsp; Elements</Link>
+              <Link style={{ textDecoration: 'none' }} to={url('/skill-simulator')}><i className="material-icons">class</i> &nbsp; Skill Simulator</Link>
               {/*<Link style={{ textDecoration: 'none' }} to={url('/skills')}><i className="material-icons">stars</i> &nbsp; Skills</Link>
               <Link style={{ textDecoration: 'none' }} to={url('/attributes')}><i className="material-icons">info</i> &nbsp; Attribute</Link>*/}
             </Navigation>
