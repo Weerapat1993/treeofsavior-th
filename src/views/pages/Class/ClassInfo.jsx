@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Case from 'case'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Grid, Cell } from 'react-mdl'
 
 import { classActions, getClassInfo, getClassSkill, getClassAttribute } from '../../../core/class'
 import { skillActions } from '../../../core/skill'
@@ -48,19 +49,17 @@ class ClassInfo extends Component {
       }
     ]
     return (
-      <div>
+      <Grid>
+        <Cell col={2} hideTablet hidePhone />
         {
           Class &&
-          <div>
+          <Cell col={8}>
             <Breadcrumbs path={path} title={Class.name} />
             <div>
-              <table className='text-center'>
+              <table className='text-center' width='100%'>
                 <tbody>
                   <tr>
-                    <td>
-                      <img onError={noImage} src={asset(`/images/Classes/${Class.img_url}.gif`)} style={{ height: 180 }} alt='' />
-                    </td>
-                    <td>
+                    <td width={120}>
                       <img src={asset(`/images/icon-class/${Case.snake(Class.name)}.png`)} alt=""/>
                       <br/>
                       <a className={`btn ${colorBtn(Class.rank)} btn-xs`}>Rank {Class.rank}</a> 
@@ -68,6 +67,9 @@ class ClassInfo extends Component {
                       <div>
                         <b>{Class.name}</b>
                       </div>
+                    </td>
+                    <td className='text-right'>
+                      <img onError={noImage} src={asset(`/images/Classes/${Class.img_url}.gif`)} style={{ height: 180 }} alt='' />
                     </td>
                   </tr>
                 </tbody>
@@ -80,9 +82,9 @@ class ClassInfo extends Component {
                 attributes={attributes}
               />
             </Loading>
-          </div>
+          </Cell>
         }
-      </div>
+      </Grid>
     )
   }
  

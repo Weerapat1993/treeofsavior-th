@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Button, ButtonGroup } from 'react-bootstrap'
-import { Card, CardMenu, CardText } from 'react-mdl'
+// import { Button, ButtonGroup } from 'react-bootstrap'
+import { Card, CardText } from 'react-mdl'
 import { Link } from 'react-router-dom'
 import Case from 'case'
 import { noImage } from '../../../utils'
@@ -15,7 +15,7 @@ class AttributeItem extends Component {
   }
   
   render() {
-    const { data, edit, Class } = this.props
+    const { data, Class } = this.props
     return (
 
       <Card shadow={0} style={{ width: '100%', margin: 'auto', marginBottom: 20 }}>
@@ -46,7 +46,7 @@ class AttributeItem extends Component {
             </tbody>
           </table>
         </CardText>
-        <CardMenu style={{color: 'black'}}>
+        {/*<CardMenu style={{color: 'black'}}>
           <ButtonGroup>
             <Button bsStyle='primary' onClick={() => edit(data)} bsSize='xsmall' >
               <i className='fa fa-edit'></i> 
@@ -55,7 +55,7 @@ class AttributeItem extends Component {
               <i className='fa fa-trash'></i> 
             </Button>
           </ButtonGroup>
-        </CardMenu>
+        </CardMenu>*/}
       </Card>
     )
   }

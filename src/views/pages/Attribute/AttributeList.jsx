@@ -9,10 +9,10 @@ import {
 } from 'react-mdl'
 
 import { attributeActions } from '../../../core/attribute'
-import AttributeModal from './AttributeModal'
-import AttributeModalEdit from './AttributeModalEdit'
+// import AttributeModal from './AttributeModal'
+// import AttributeModalEdit from './AttributeModalEdit'
 import AttributeItem from './AttributeItem'
-import { Classes, AttributeFillable } from '../../../core/model'
+import { Classes, Skill, AttributeFillable } from '../../../core/model'
 import { TitleDisplay } from '../../components'
 
 class AttributeList extends Component {
@@ -78,7 +78,7 @@ class AttributeList extends Component {
       <Grid style={{ minHeight: 750 }}>
         <Cell col={2} hidePhone hideTablet />
         <Cell col={8}>
-          <div className='text-right'>
+        {/*<div className='text-right'>
           <AttributeModal
             data={this.state.createAttribute}
             handleSubmit={this.createAttribute.bind(this)} 
@@ -100,13 +100,14 @@ class AttributeList extends Component {
           skills={skills}
         />
         <br/>
-        <br/>
+        <br/>*/}
         {
           (data.length) ?
             data.map((item, i) => (
               <AttributeItem 
                 key={i} 
                 Class={Classes(classes).where('id','=',item.class_id).firstOrFail()}
+                Skill={Skill(skills).where('id','=',item.skill_id).firstOrFail()}
                 data={item} 
                 edit={this.editOpen.bind(this)}  
                 deleteAttribute={this.deleteAttribute.bind(this)} 

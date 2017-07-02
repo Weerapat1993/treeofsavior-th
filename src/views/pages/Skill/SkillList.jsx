@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import { skillActions } from '../../../core/skill'
-import SkillModal from './SkillModal'
-import SkillModalEdit from './SkillModalEdit'
+// import SkillModal from './SkillModal'
+// import SkillModalEdit from './SkillModalEdit'
 import SkillModalVideo from './SkillModalVideo'
 import SkillItem from './SkillItem'
 import { Classes, Attribute, SkillFillable } from '../../../core/model'
@@ -89,7 +89,7 @@ class SkillList extends Component {
     const { data, classes, attributes, error } = this.props
     return (
       <div style={{ minHeight: 750 }}>
-        <div className='text-right'>
+        {/*<div className='text-right'>
           <SkillModal
             data={this.state.createSkill}
             handleSubmit={this.createSkill.bind(this)} 
@@ -108,6 +108,7 @@ class SkillList extends Component {
           showModal={this.state.showModalEdit}
           classes={classes}
         />
+        */}
         <SkillModalVideo
           data={this.state.updateSkill}
           load={this.state.loadSkill}
@@ -129,6 +130,7 @@ class SkillList extends Component {
                 <SkillItem 
                   key={i} 
                   Class={Classes(classes).where('id','=',+item.class_id).firstOrFail()}
+                  Skill={item}
                   attributes={Attribute(attributes).where('skill_id','=',+item.id).get()}
                   data={item} 
                   edit={this.editOpen.bind(this)}  

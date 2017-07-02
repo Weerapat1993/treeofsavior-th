@@ -1,14 +1,39 @@
 import React from 'react'
 import Case from 'case'
+import Dropzone from 'react-dropzone'
 import { connect } from 'react-redux'
 import { Button, Modal } from 'react-bootstrap'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
+
 import { attributeValidation } from '../../core/form/attributeValidation'
 import { Skill, Classes } from '../../core/model'
 import { noImage, selectField, inputField } from '../../utils'
 import SkillItemIcon from '../pages/Skill/SkillItemIcon'
 
+// outside your render() method
+export const fileField = (field) => (
+  <Dropzone
+    accept="image/png"
+    onDrop={(accepted, rejected) => field.onDrop(accepted, rejected)}
+    multiple={false}
+    style={{ width: 50, height: 50, borderWidth: 1 }}
+    {...field.input}
+  />
+  )
+
 class AttributeForm extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      accepted: [],
+      rejected: []
+    }
+  }
+
+  onDrop(accepted, rejected) {
+    this.setState({ accepted: accepted[0], rejected })
+  }
+
   render() {
     const { handleSubmit, close, classes, skills, forms } = this.props
     const { att_name, att_max_lv, att_description, skill_id } = forms
@@ -23,6 +48,8 @@ class AttributeForm extends React.Component {
     if(forms.skill_id) {
       skill = Skill(skills).find(+forms.skill_id).firstOrFail()
     }
+    console.log(this.state.accepted)
+    console.log(forms)
     return (
       <form onSubmit={handleSubmit}>
         <Modal.Body>
@@ -34,7 +61,7 @@ class AttributeForm extends React.Component {
                     <tbody>
                       <tr>
                         <td width={75}>
-                          <img onError={noImage} src={`http://www.treeofsavior-th.com/images/icon-attribute/${icon_name}.png`} alt='' width={60} height={60}/>
+                          <img onError={noImage} src={`https://www.treeofsavior-th.com/images/icon-attribute/${icon_name}.png`} alt='' width={60} height={60}/>
                         </td>
                       </tr>
                     </tbody>
@@ -57,6 +84,7 @@ class AttributeForm extends React.Component {
             </tbody>
           </table>
           <hr/>
+          <Field name='att_icon' component={fileField} onDrop={this.onDrop.bind(this)} />
           <Field name='att_name' component={inputField} type='text' label='Attribute Name' placeholder='Attribute Name' />
           <Field name='att_description' component={inputField} type='text' label='Attribute Description' placeholder='Attribute Description' />
           <Field name='att_max_lv' component={inputField} type='numbber' min={0} max={100} label='Attribute Max LV' placeholder='Attribute Max LV' />
@@ -92,6 +120,7 @@ const selector = formValueSelector('attribute') // <-- same as form name
 const mapStateToProps = (state, ownProps) => {
   return {
     forms: {
+      att_icon: selector(state, 'att_icon'),
       att_name: selector(state, 'att_name'),
       att_description: selector(state, 'att_description'),
       att_max_lv: selector(state, 'att_max_lv'),

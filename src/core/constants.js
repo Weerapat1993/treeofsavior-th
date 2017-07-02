@@ -9,7 +9,7 @@ export const APP_NAME = 'Tree of Savior Fansite Thailand';
 //=====================================
 //  API
 //-------------------------------------
-export const API_BASE_URL = 'http://localhost:8000'
+export const API_BASE_URL = 'https://treeofsavior-th.com'
 
 
 export const API = {

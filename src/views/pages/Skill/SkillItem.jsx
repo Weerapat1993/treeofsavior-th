@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, ButtonGroup } from 'react-bootstrap'
+// import { Button, ButtonGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Case from 'case'
 import { noImage } from '../../../utils'
@@ -16,10 +16,10 @@ class SkillItem extends Component {
   }
   
   render() {
-    const { data, attributes, edit, Class, video } = this.props
+    const { data, attributes, Class, video, Skill } = this.props
     return (
       <div>
-        <div className='text-right'>
+        {/*<div className='text-right'>
           <ButtonGroup>
             <Button bsStyle='primary' onClick={() => edit(data)} bsSize='xsmall' >
               <i className='fa fa-edit'></i> 
@@ -28,7 +28,7 @@ class SkillItem extends Component {
               <i className='fa fa-trash'></i> 
             </Button>
           </ButtonGroup>
-        </div>
+        </div>*/}
         <table width='100%'>
           <tbody>
             <tr>
@@ -42,25 +42,22 @@ class SkillItem extends Component {
                 <span className='visible-xs'>
                   <b>อาชีพ :</b> <Link to={url(`/classes/show/${Class.id}`)}>{Class.name}</Link> <br/>
                 </span>
-                {
-                  attributes.length ?
-                  <div>
-                    <br/>
-                    <b>Skill Attribute</b> <br/>
-                    { 
-                      attributes.map((item, i) => (
-                        <AttributeItemInSkill 
-                          key={i} 
-                          Class={Class}
-                          data={item} 
-                        />
-                      ))
-                    }
-                    <br/>
-                    <br/>
-                  </div>
-                  : <span></span>
-                }
+                <div>
+                  <br/>
+                  <b>Skill Attribute</b> <br/>
+                  { attributes.length ?
+                    attributes.map((item, i) => (
+                      <AttributeItemInSkill 
+                        key={i} 
+                        Class={Class}
+                        data={item}
+                        Skill={Skill}
+                      />
+                    )) : <span></span>
+                  }
+                  <br/>
+                  <br/>
+                </div>
               </td>
               <td width={75} className='text-center hidden-xs'>
                 {

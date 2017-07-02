@@ -5,6 +5,7 @@ import {
   Drawer,
   Navigation,
   Content,
+  HeaderRow,
 } from 'react-mdl'
 import { Link } from 'react-router-dom'
 import ScrollToTop from 'react-scroll-up'
@@ -42,6 +43,15 @@ export const getTextColorClass = (color, level) => {
 }
 
 class Layouts extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { activeTab: 0 };
+  }
+
+  linkTo(tabId) {
+    this.setState({ tabId })
+  }
+
   onClick() {
     window.scrollTo(0, 0)
   }
@@ -50,25 +60,27 @@ class Layouts extends Component {
     return (
       <DocumentTitle title={title ? title : 'Tree of Savior Fansite Thailand'}>
         <Layout fixedHeader>
-          <Header className={classNames(getColorClass('green', 800))} title={<span>Treeofsavior-TH</span>}>
-            <Navigation hidden>
-              <Link to={url('/')}><i className="material-icons">add</i> Home</Link>
-              <Link to={url('/about')}>About</Link>
-              <Link to={url('/classes')}>Classes</Link>
-              <Link to={url('/skills')}>Skills</Link>
-              <Link to={url('/attributes')}>Attribute</Link>
-            </Navigation>
-          </Header>
+          <Header waterfall className={classNames(getColorClass('green', 800))}>
+            <HeaderRow title="Treeofsavior-TH" />
+            <HeaderRow>
+              <Navigation>
+                <Link style={{ textDecoration: 'none' }} to={url('/classes/type/Swordsman')}>Swordsman</Link>
+                <Link style={{ textDecoration: 'none' }} to={url('/classes/type/Wizard')}>Wizard</Link>
+                <Link style={{ textDecoration: 'none' }} to={url('/classes/type/Archer')}>Archer</Link>
+                <Link style={{ textDecoration: 'none' }} to={url('/classes/type/Cleric')}>Cleric</Link>
+              </Navigation>
+            </HeaderRow>
+          </Header>          
           <Drawer title="Menus">
             <Navigation>
               <Link style={{ textDecoration: 'none' }} to={url('/')}><i className="material-icons">home</i> &nbsp; Home</Link>
               <Link style={{ textDecoration: 'none' }} to={url('/about')}><i className="material-icons">search</i> &nbsp; About</Link>
               <Link style={{ textDecoration: 'none' }} to={url('/classes')}><i className="material-icons">class</i> &nbsp; Classes</Link>
-              <Link style={{ textDecoration: 'none' }} to={url('/skills')}><i className="material-icons">stars</i> &nbsp; Skills</Link>
-              <Link style={{ textDecoration: 'none' }} to={url('/attributes')}><i className="material-icons">info</i> &nbsp; Attribute</Link>
+              {/*<Link style={{ textDecoration: 'none' }} to={url('/skills')}><i className="material-icons">stars</i> &nbsp; Skills</Link>
+              <Link style={{ textDecoration: 'none' }} to={url('/attributes')}><i className="material-icons">info</i> &nbsp; Attribute</Link>*/}
             </Navigation>
           </Drawer>
-          <Content>
+          <Content>            
             {children}
             <Footers />
             <ScrollToTop duration={1000} showUnder={160} style={styles.animationScroll}>

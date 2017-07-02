@@ -16,7 +16,7 @@ const circleColor = (circle) => {
 class SkillItemIcon extends Component {
   render() {
     const { skill, video } = this.props
-    const icon_name = `${skill.id}_${Case.snake(skill.name)}`
+    const icon_name = `${skill.class_id}_${Case.snake(skill.name)}`
     return (
       <table className='text-center'>
         <tbody>

@@ -11,6 +11,12 @@ export class Fillable {
     return this
   }
 
+  file(field) {
+    const data = this.data
+    this.data = Object.assign({}, data, { [field]: data[field][0]})
+    return this
+  }
+
   string(field) {
     const data = this.data
     this.data = Object.assign({}, data, { [field]: data[field]})

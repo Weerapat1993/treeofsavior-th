@@ -1,4 +1,4 @@
-import Collection from 'array-collection'
+import Collection from './collection'
 import { Fillable } from '../utils'
 
 const Model = (data, primaryKey) => new Collection(data, primaryKey)
@@ -18,6 +18,7 @@ export const SkillFillable = (value) => new Fillable(value)
   .get()
 
 export const AttributeFillable = (value) => new Fillable(value)
+  .file('att_icon')
   .string('att_name')
   .string('att_description')
   .integer('att_max_lv')

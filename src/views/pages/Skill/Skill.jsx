@@ -39,6 +39,7 @@ class Skill extends Component {
   render() {
     const { skills, classes, attributes, skillLoading, attributeLoading, skillError } = this.props
     const skillFilter = skillSelector(skills, this.state.keyword)
+    console.log(skills)
     return (
       <div>
         <Breadcrumbs title='Skills' />
@@ -52,6 +53,7 @@ class Skill extends Component {
             classes={classes}
             attributes={attributes}
             error={skillError}
+            skills={skills}
           />
         </Loading>
       </div>  
