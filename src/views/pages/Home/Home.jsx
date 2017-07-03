@@ -20,7 +20,7 @@ export const Home = (props) => {
       <Cell col={8}>
         <MenuClass title='อ่านข้อมูลเพิ่มเติม' path={'/classes/type/'} />
         <Grid>
-          {
+          {/*
             news.map((item, i) => (
               <Cell col={12 / news.length} phone={12} key={i}>
                 <Card shadow={0} style={{width: '100%', height: 450, margin: 'auto'}}>
@@ -35,7 +35,7 @@ export const Home = (props) => {
                 </Card>
               </Cell>
             ))
-          }
+          */}
         </Grid>
       </Cell>
     </Grid>
