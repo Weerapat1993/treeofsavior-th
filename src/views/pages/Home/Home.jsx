@@ -24,7 +24,7 @@ export const Home = (props) => {
             news.map((item, i) => (
               <Cell col={12 / news.length} phone={12} key={i}>
                 <Card shadow={0} style={{width: '100%', height: 450, margin: 'auto'}}>
-                  <CardTitle expand style={{color: '#fff', background: 'url(http://www.getmdl.io/assets/demos/dog.png) bottom right 15% no-repeat #46B6AC'}}>{item}</CardTitle>
+                  <CardTitle expand style={{color: '#fff', background: '#46B6AC'}}>{item}</CardTitle>
                   <CardText>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Aenan convallis.
