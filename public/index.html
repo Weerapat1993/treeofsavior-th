@@ -3,9 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#8bc349">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <title>Tree of Savior Fansite Thailand</title>
+    
+    <meta name="description" content="MeteorKiller: Kill all Star lord's meteor">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="TOS App">
+    <meta name="theme-color" content="#8bc349">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MeteorKiller">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#505050">
+
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#505050">
+    <meta name="msapplication-navbutton-color" content="#505050">
+
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
@@ -32,9 +52,14 @@
     -->
     <script>
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/service-worker.js');
-        });
+        navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+          .then(function() {
+            console.log('serviceWorker: registered');
+          });
+
+        navigator.serviceWorker.ready.then(function() {
+            console.log('serviceWorker: ready');
+          });
       }
     </script>
   </body>
