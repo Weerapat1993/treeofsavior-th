@@ -1,6 +1,7 @@
 import React from 'react'
 import { Footer, FooterSection, FooterLinkList } from 'react-mdl'
-
+import { RELEASE_VERSION } from '../../../config/version'
+ 
 export const Footers = () => {
   return (
     <Footer size="mini">
@@ -8,6 +9,7 @@ export const Footers = () => {
         <FooterLinkList>
             <a href="#">Help</a>
             <a href="#">Privacy & Terms</a>
+            <a>v{RELEASE_VERSION}</a>
         </FooterLinkList>
       </FooterSection>
     </Footer>
