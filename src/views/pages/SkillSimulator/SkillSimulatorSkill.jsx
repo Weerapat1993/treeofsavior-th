@@ -19,7 +19,7 @@ const SkillSimulatorSkill = ({ build, skills, attributes }) => (
       build.map((rank, i) => {
         let classSkills = []
         if(build[i]) {
-          classSkills = Skill(skills).where('class_id', '=', +build[i].id).get()
+          classSkills = Skill(skills).where('class_id', '=', +build[i].id).orderBy('circle', 'asc').get()
         }
         return (
           <Grid key={i}>
