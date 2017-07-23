@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Button, OverlayTrigger, Popover } from 'react-bootstrap'
 import Case from 'case'
-import { Link } from 'react-router-dom'
 import { noImage } from '../../../utils'
-import { asset, url } from '../../../core/constants'
+import { asset } from '../../../core/constants'
 
 const circleColor = (circle) => {
   switch(+circle) {
