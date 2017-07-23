@@ -1,21 +1,31 @@
 import React, { Component } from 'react'
-import Case from 'case'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Grid, Cell, Card, CardTitle, CardActions } from 'react-mdl'
+import { Grid, Cell } from 'react-mdl'
 
 import { skillActions } from '../../../core/skill'
 import { classActions } from '../../../core/class'
 import { attributeActions } from '../../../core/attribute'
 import { Loading } from '../../components'
 import { Classes } from '../../../core/model'
-import { asset } from '../../../core/constants'
-import { noImage } from '../../../utils'
 
-import MenuClass from '../../pages/Home/MenuClass'
+import SkillSimulatorTable from './SkillSimulatorTable'
+import SkillSimulatorSkill from './SkillSimulatorSkill'
+import SkillSimulatorRank from './SkillSimulatorRank'
 
 
 class SkillSimulatorBuild extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      build: []
+    }
+
+    this.addClass = this.addClass.bind(this)
+    this.removeClass = this.removeClass.bind(this)
+  }
+  
   componentDidMount() {
     const { classActions, skillActions, attributeActions, classes, skills, attributes } = this.props
     if(!classes.length) {
@@ -29,54 +39,39 @@ class SkillSimulatorBuild extends Component {
     }
   }
 
+  addClass(item) {
+    const { build } = this.state
+    const count = Classes(build).where('name','=',item.name).count()
+    if(count < 3 && build.length < 8) {
+      this.setState({
+        build: [
+          ...build,
+          item
+        ]
+      })
+    }
+  }
+
+  removeClass() {
+    const { build } = this.state
+    this.setState({
+      build: build.slice(0, build.length - 1)
+    })
+  }
+
   render() {
-    const { skillLoading, attributeLoading, attributes, skills, classes } = this.props
+    const { skillLoading, attributeLoading, classes, skills, attributes } = this.props
+    const { build } = this.state
     const classType = this.props.match.params.class_type
-    const Ranks = [1,2,3,4,5,6,7,8]
     return (
       <Loading isLoading={skillLoading || attributeLoading}>
         <Grid>
           <Cell col={2} hidePhone hideTablet />
           <Cell col={8} tablet={12} phone={12}>
             <h1 className="text-center">Skill Simulator Build</h1>
-            <MenuClass title='GET STARTED' path={'/skill-simulator/type/'} />
-            <Grid className='text-center'>
-            {
-              Ranks.map((rank, i) => (
-                <Cell col={3} tablet={4} phone={6} key={i}>
-                  <Card shadow={0} style={{width: '100%', height: 200, margin: 'auto'}}>
-                    <CardTitle expand style={{color: '#fff', background: '#46B6AC', justifyContent: 'center'}}>
-                      {
-                        Classes(classes).where('class_type','=', classType).where('rank','=', rank).get().map((item, j) => (
-                          <img key={j} onError={noImage} src={asset(`/images/icon-class/${Case.snake(item.name)}.png`)} style={{ width: 75, height: 75 }} alt=""/>
-                        ))
-                      }
-                    </CardTitle>
-                    <CardActions className='text-center bold' border>
-                      {`Rank ${rank}`}
-                    </CardActions>
-                  </Card>
-                </Cell>
-              ))
-            }
-            </Grid>
-            <div className="table-responsive">
-              <table className='table table-bordered text-center bg-white'>
-                <tbody>
-                  <tr>
-                    {
-                      Ranks.map((rank, i) => (
-                        <td>
-                          <img key={i} onError={noImage} src={asset(`/images/icon-class/${Case.snake(classType)}.png`)} style={{ width: 75, height: 75 }} alt=""/>
-                          <br/>
-                          {classType}
-                        </td>
-                      ))
-                    }
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <SkillSimulatorTable build={build} onRemove={this.removeClass} />
+            <SkillSimulatorRank build={build} classes={classes} classType={classType} addClass={this.addClass} />
+            <SkillSimulatorSkill build={build} skills={skills} attributes={attributes} />
           </Cell>
         </Grid>
       </Loading>

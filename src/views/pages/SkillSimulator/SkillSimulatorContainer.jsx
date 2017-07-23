@@ -26,7 +26,7 @@ class SkillSimulatorContainer extends Component {
   }
 
   render() {
-    const { skillLoading, attributeLoading, attributes, skills, classes } = this.props
+    const { skillLoading, attributeLoading } = this.props
     return (
       <Loading isLoading={skillLoading || attributeLoading}>
         <Grid>

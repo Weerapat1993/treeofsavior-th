@@ -61,14 +61,14 @@ class Layouts extends Component {
         <Layout fixedHeader>
           <Header waterfall className={classNames(getColorClass('green', 800))}>
             <HeaderRow title="Treeofsavior-TH" />
-            <HeaderRow>
+            {/* <HeaderRow>
               <Navigation>
                 <Link style={{ textDecoration: 'none' }} to={url('/classes/type/Swordsman')}>Swordsman</Link>
                 <Link style={{ textDecoration: 'none' }} to={url('/classes/type/Wizard')}>Wizard</Link>
                 <Link style={{ textDecoration: 'none' }} to={url('/classes/type/Archer')}>Archer</Link>
                 <Link style={{ textDecoration: 'none' }} to={url('/classes/type/Cleric')}>Cleric</Link>
               </Navigation>
-            </HeaderRow>
+            </HeaderRow> */}
           </Header>          
           <Drawer title="Menus">
             <Navigation>
