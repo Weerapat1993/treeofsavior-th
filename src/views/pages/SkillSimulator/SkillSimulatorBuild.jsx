@@ -70,8 +70,8 @@ class SkillSimulatorBuild extends Component {
           <Cell col={8} tablet={12} phone={12}>
             <h1 className="text-center">Skill Simulator Build</h1>
             <SkillSimulatorTable build={build} onRemove={this.removeClass} />
-            <SkillSimulatorRank build={build} classes={classes} classType={classType} addClass={this.addClass} />
             <SkillSimulatorSkill build={build} skills={skills} attributes={attributes} />
+            <SkillSimulatorRank build={build} classes={classes} classType={classType} addClass={this.addClass} />
           </Cell>
         </Grid>
       </Loading>
